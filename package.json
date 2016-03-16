@@ -17,5 +17,9 @@
     "serve-favicon": "~2.3.0"
   },
   "author": "TeX2e",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jsonlint": "^1.6.2",
+    "yamljs": "^0.2.6"
+  }
 }

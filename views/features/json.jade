@@ -1,4 +1,20 @@
 extends ../layout
 
+block header
+  link(rel="stylesheet", type="text/css", href="/CodeMirror/lib/codemirror.css")
+  link(rel="stylesheet", type="text/css", href="/stylesheets/CodeMirrorCustomize.css")
+  script(type="application/javascript", src="/CodeMirror/lib/codemirror.js")
+  script(type="application/javascript", src="/CodeMirror/addon/edit/closebrackets.js")
+  script(type="application/javascript", src="/CodeMirror/mode/yaml/yaml.js")
+  script(type="application/javascript", src="/javascripts/json-js/json.js")
+
 block content
   h1= title
+  
+  form(method="POST", action="/json")
+    textarea(id="editor_json" class="CodeMirror" name="json_text" cols="60" rows="20")= json_text
+    button(type="submit") Convert JSON to YAML
+  
+  form(method="POST", action="/json")
+    textarea(id="editor_yaml" class="CodeMirror" name="yaml_text" cols="60" rows="20")= yaml_text
+    button(type="submit") Convert YAML to JSON
