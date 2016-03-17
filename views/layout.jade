@@ -21,6 +21,15 @@ html
     nav#menu
       header
         h2 Menu
+        p Docs, Installation, Usage, API
+        section(class="menu-section")
+          h3(class="menu-section-title") JSON
+          ul(class="menu-section-list")
+            li: a(href="/convert/json2yaml" target="_blank") convert json → yaml
+            li: a(href="/convert/json2cson" target="_blank") convert json → cson
+            li: a(href="/convert/yaml2json" target="_blank") convert yaml → json
+            li: a(href="/convert/cson2json" target="_blank") convert cson → json
+
     main#panel
       header
         span(class="slideout-menu-toggle-button") ☰
