@@ -9,6 +9,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var json = require('./routes/json/index');
 var yaml = require('./routes/yaml/index');
+var cson = require('./routes/cson/index');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/', json);
 app.use('/', yaml);
+app.use('/', cson);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

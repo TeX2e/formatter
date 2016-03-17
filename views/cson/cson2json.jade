@@ -1,0 +1,16 @@
+extends ../layout
+
+block header
+  include ../layout-convert-header.jade
+
+  script.
+    window.editorFromOption = { mode: 'coffeescript' };
+    window.editorToOption   = {};
+  script(type="application/javascript", src="/CodeMirror/mode/coffeescript/coffeescript.js")
+  script(type="application/javascript", src="/javascripts/convert/process.js")
+
+block content
+  h1= title
+  
+  - var convertButton = "Convert YAML to JSON";
+  include ../layout-convert.jade

@@ -15,7 +15,8 @@ var sampleText = `
       "ham"
   ],
   "dict": {
-    "prop": "foo"
+    "prop": "foo",
+    "prop2": 123
   }
 }
 `;
