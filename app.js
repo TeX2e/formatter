@@ -50,6 +50,9 @@ if (app.get('env') === 'development') {
             error: err
         });
     });
+
+    // to pretty print html
+    app.locals.pretty = true;
 }
 
 // production error handler
