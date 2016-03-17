@@ -1,8 +1,11 @@
 extends ../layout
 
-block header
-  include ../layout-convert-header.jade
-  
+block prepend stylesheets
+  link(rel="stylesheet", type="text/css", href="/CodeMirror/lib/codemirror.css")
+
+block append scripts
+  script(type="application/javascript", src="/CodeMirror/lib/codemirror.js")
+  script(type="application/javascript", src="/CodeMirror/addon/edit/closebrackets.js")
   script.
     window.editorFromOption = {};
     window.editorToOption   = { mode: 'coffeescript' };

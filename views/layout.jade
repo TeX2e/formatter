@@ -1,11 +1,29 @@
 doctype html
 html
   head
+    meta(charset="utf-8")
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    script(type="application/javascript", src="/javascripts/lib/jquery-2.2.1.min.js")
-      
-    block header
+    meta(http-equiv="cleartype" content="on")
+    meta(name="MobileOptimized" content="320")
+    meta(name="HandheldFriendly" content="True")
+    meta(name="apple-mobile-web-app-capable" content="yes")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no")
+    
+    block stylesheets
+      link(rel='stylesheet', href='/stylesheets/style.css')
+    
+    block scripts
+      script(src="/javascripts/lib/jquery-2.2.1.min.js")
+      script(src="/javascripts/lib/slideout.min.js")
+      script(src="/javascripts/slideout.js")
       
   body
-    block content
+    nav#menu
+      header
+        h2 Menu
+    main#panel
+      header
+        span(class="toggle-button") ☰
+        h2 Panel
+        
+      block content
