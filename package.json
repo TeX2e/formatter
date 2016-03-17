@@ -19,6 +19,7 @@
   "author": "TeX2e",
   "license": "MIT",
   "devDependencies": {
+    "cson": "^3.0.2",
     "jsonlint": "^1.6.2",
     "yamljs": "^0.2.6"
   }

@@ -5,12 +5,12 @@ block header
   
   script.
     window.editorFromOption = {};
-    window.editorToOption   = { mode: 'yaml' };
-  script(type="application/javascript", src="/CodeMirror/mode/yaml/yaml.js")
+    window.editorToOption   = { mode: 'coffeescript' };
+  script(type="application/javascript", src="/CodeMirror/mode/coffeescript/coffeescript.js")
   script(type="application/javascript", src="/javascripts/convert/process.js")
 
 block content
   h1= title
   
-  - var convertButton = "Convert JSON to YAML"
+  - var convertButton = "Convert JSON to CSON"
   include ../layout-convert.jade
