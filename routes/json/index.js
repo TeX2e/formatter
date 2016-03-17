@@ -1,26 +1,37 @@
 
-// --- requires ---
-
 var express = require('express');
 var router = express.Router();
-// use to convert json to yaml, and yaml to json
-var YAML = require('yamljs');
-var jsonlint = require("jsonlint");
 
-// --- codes ---
+var json2yaml = require('./json2yaml.js');
 
-var sample_json_text = `
-{
-	"foo": 123,
-	"bar": [
-		"spam",
-		"ham",
-		"egg"
-	],
-	"baz": true
-}
-`;
+// GET /convert/json2yaml
+router.get('/convert/json2yaml', function (req, res) {
+    res.render('json/json2yaml', { title: 'JSON formatter' });
+});
 
+// POST /convert/json2yaml
+// convert jsonText if jsonText is passed via post parameters.
+router.post('/convert/json2yaml', function (req, res) {
+    var jsonText = req.body.text;
+    var yamlText = json2yaml(jsonText);
+    res.write(yamlText);
+    res.end();
+});
+
+// GET /convert/json2cson
+// POST /convert/json2cson
+
+// GET /convert/json2xml
+// POST /convert/json2xml
+
+// GET /format/json-pretty-print
+// POST /format/json-pretty-print
+
+module.exports = router;
+
+
+
+/*
 function render(res, jsonText, yamlText) {
     res.render('features/json', {
         title: 'JSON formatter',
@@ -39,8 +50,8 @@ router.get('/', function (req, res, next) {
 });
 
 // POST /json
-// convert json_text if json_text is passed via post parameters.
-// convert yaml_text if yaml_text is passed via post parameters.
+// convert jsonText if jsonText is passed via post parameters.
+// convert yamlText if yamlText is passed via post parameters.
 // render with converted text.
 router.post('/', function (req, res) {
     var jsonText = req.body.json_text;
@@ -77,5 +88,4 @@ function convertYAMLtoJSON(yamlText) {
     }
     return JSON.stringify(jsonObj, null, "\t");
 }
-
-module.exports = router;
+*/
