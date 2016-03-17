@@ -1,6 +1,10 @@
 
+html {
+    max-width: 900px;
+}
+
 body {
-    padding: 50px;
+    margin: 10px 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -8,12 +12,25 @@ a {
     color: #00B7FF;
 }
 
+main {
+    background-color: white;
+}
+
 /*--------------------------------------------------*/
 /* for CodeMirror */
 
+#convertFrom,
+#convertTo {
+    display: inline-block;
+    vertical-align: top;
+}
+
 .CodeMirror {
+    width: 400px;
+    height: 400px;
     font-family: Monaco, 'Andale Mono', 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
     font-size: 10pt;
+    border: solid 1px #999;
 }
 
 /*--------------------------------------------------*/
@@ -56,4 +73,8 @@ body {
 
 .slideout-menu-toggle-button {
     font-size: 24pt;
+}
+
+nav {
+    margin: 50px;
 }
