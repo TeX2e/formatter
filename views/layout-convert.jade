@@ -1,0 +1,8 @@
+//- this will be included by convert/xxx2yyy.jade
+
+form(id="convertFrom")
+  textarea(id="editorFrom" class="CodeMirror" name="text" cols="60" rows="20")= textFrom
+  button(type="button")= convertButton
+  
+form(id="convertTo")
+  textarea(id="editorTo" class="CodeMirror" name="text" cols="60" rows="20")= textTo

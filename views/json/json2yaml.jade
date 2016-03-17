@@ -1,0 +1,17 @@
+extends ../layout
+
+block header
+  include ../layout-convert-header.jade
+  
+  script.
+    window.editorFromOption = {};
+    window.editorToOption   = { mode: 'yaml' };
+  script(type="application/javascript", src="/CodeMirror/mode/yaml/yaml.js")
+  script(type="application/javascript", src="/javascripts/convert/process.js")
+
+block content
+  h1= title
+  
+  - var convertButton = "Convert JSON to YAML"
+  - var textFrom = '{\n  "foo": true,\n  "bar": [\n    "spam",\n    "ham",\n    "egg"\n  ],\n  "baz": {\n    "baz": 123\n  }\n}\n'
+  include ../layout-convert.jade
