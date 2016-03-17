@@ -13,8 +13,8 @@ API
     GET /features
 
 
-JSON, YAML, CSON, XML
----------------------
+JSON, YAML, CSON
+----------------
 
 ### JSON
 
@@ -35,11 +35,13 @@ JSON, YAML, CSON, XML
     POST /convert/cson2yaml
     POST /convert/cson2xml
 
+<!--
 ### XML
 
     POST /convert/xml2json
     POST /convert/xml2yaml
     POST /convert/xml2cson
+-->
 
 
 Markdown, HTML & HTML previewer
