@@ -18,13 +18,4 @@ router.post('/convert/yaml2json', function (req, res) {
     res.end();
 });
 
-// GET /convert/json2cson
-// POST /convert/json2cson
-
-// GET /convert/json2xml
-// POST /convert/json2xml
-
-// GET /format/json-pretty-print
-// POST /format/json-pretty-print
-
 module.exports = router;

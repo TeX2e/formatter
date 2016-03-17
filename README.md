@@ -20,27 +20,20 @@ JSON, YAML, CSON
 
     POST /convert/json2yaml
     POST /convert/json2cson
-    POST /convert/json2xml
     POST /format/json-pretty-print
 
 ### YAML
 
     POST /convert/yaml2json
-    POST /convert/yaml2cson
-    POST /convert/yaml2xml
 
 ### CSON
 
     POST /convert/cson2json
-    POST /convert/cson2yaml
-    POST /convert/cson2xml
 
 <!--
 ### XML
 
     POST /convert/xml2json
-    POST /convert/xml2yaml
-    POST /convert/xml2cson
 -->
 
 
@@ -73,20 +66,14 @@ CSS, Sass, Scss, Less
 ### Sass
 
     POST /convert/sass2css
-    POST /convert/sass2scss
-    POST /convert/sass2less
 
 ### Scss
 
     POST /convert/scss2css
-    POST /convert/scss2sass
-    POST /convert/scss2less
 
 ### Less
 
     POST /convert/less2css
-    POST /convert/less2sass
-    POST /convert/less2scss
 
 
 JavaScript, CoffeeScript, TypeScript

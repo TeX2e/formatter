@@ -30,24 +30,4 @@ router.post('/convert/cson2json', function (req, res) {
     res.end();
 });
 
-// // GET /convert/cson2yaml
-// router.get('/convert/cson2yaml', function (req, res) {
-//     //
-// });
-//
-// // POST /convert/cson2yaml
-// router.post('/convert/cson2yaml', function (req, res) {
-//     //
-// });
-//
-// // GET /convert/cson2xml
-// router.get('/convert/cson2xml', function (req, res) {
-//     //
-// });
-//
-// // POST /convert/cson2xml
-// router.post('/convert/cson2xml', function (req, res) {
-//     //
-// });
-
 module.exports = router;
