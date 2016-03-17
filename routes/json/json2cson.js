@@ -10,8 +10,8 @@ function convertJSONtoCSON(jsonText) {
     } catch (e) {
         return e.toString();
     }
-    var json_obj = JSON.parse(jsonText);
-    return CSON.createCSONString(json_obj)
+    var jsonObj = JSON.parse(jsonText);
+    return CSON.createCSONString(jsonObj)
 }
 
 module.exports = convertJSONtoCSON;

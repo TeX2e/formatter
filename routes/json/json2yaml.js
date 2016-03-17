@@ -10,8 +10,8 @@ function convertJSONtoYAML(jsonText) {
     } catch (e) {
         return e.toString();
     }
-    var json_obj = JSON.parse(jsonText);
-    return YAML.stringify(json_obj, 100, 2);
+    var jsonObj = JSON.parse(jsonText);
+    return YAML.stringify(jsonObj, 100, 2);
 }
 
 module.exports = convertJSONtoYAML;
