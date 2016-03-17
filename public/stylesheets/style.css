@@ -51,3 +51,9 @@ body {
 .slideout-open .slideout-menu {
     display: block;
 }
+
+/* user def */
+
+.slideout-menu-toggle-button {
+    font-size: 24pt;
+}

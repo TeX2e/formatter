@@ -9,7 +9,7 @@ $(document).ready(function () {
     });
 
     // Toggle button
-    $('.toggle-button').click(function () {
+    $('.slideout-menu-toggle-button').click(function () {
         slideout.toggle();
     });
 });
