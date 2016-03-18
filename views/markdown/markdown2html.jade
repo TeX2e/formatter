@@ -6,14 +6,14 @@ block prepend stylesheets
 block append scripts
   script(type="application/javascript", src="/CodeMirror/lib/codemirror.js")
   script(type="application/javascript", src="/CodeMirror/addon/edit/closebrackets.js")
-  script.
-    window.editorFromOption = { mode: 'markdown' };
-    window.editorToOption   = { mode: 'htmlmixed' };
   script(type="application/javascript", src="/CodeMirror/mode/markdown/markdown.js")
   script(type="application/javascript", src="/CodeMirror/mode/xml/xml.js")
   script(type="application/javascript", src="/CodeMirror/mode/css/css.js")
   script(type="application/javascript", src="/CodeMirror/mode/javascript/javascript.js")
   script(type="application/javascript", src="/CodeMirror/mode/htmlmixed/htmlmixed.js")
+  script.
+    window.editorFromOption = { mode: 'markdown' };
+    window.editorToOption   = { mode: 'htmlmixed' };
   script(type="application/javascript", src="/javascripts/convert/process.js")
 
 block content

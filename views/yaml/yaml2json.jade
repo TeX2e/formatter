@@ -6,10 +6,10 @@ block prepend stylesheets
 block append scripts
   script(type="application/javascript", src="/CodeMirror/lib/codemirror.js")
   script(type="application/javascript", src="/CodeMirror/addon/edit/closebrackets.js")
+  script(type="application/javascript", src="/CodeMirror/mode/yaml/yaml.js")
   script.
     window.editorFromOption = { mode: 'yaml' };
     window.editorToOption   = {};
-  script(type="application/javascript", src="/CodeMirror/mode/yaml/yaml.js")
   script(type="application/javascript", src="/javascripts/convert/process.js")
 
 block content
