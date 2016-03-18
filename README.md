@@ -48,8 +48,7 @@ Markdown, HTML & HTML previewer
 ### HTML
 
     POST /convert/html2markdown
-    POST /format/html-pretty-print
-    POST /format/html-preview
+    POST /format/html
 
 Note: html `<script>` tags will be removed in previewer
 
