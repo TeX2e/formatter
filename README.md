@@ -20,7 +20,7 @@ JSON, YAML, CSON
 
     POST /convert/json2yaml
     POST /convert/json2cson
-    POST /format/json-pretty-print
+    POST /format/json
 
 ### YAML
 

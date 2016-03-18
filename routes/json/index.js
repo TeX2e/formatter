@@ -4,6 +4,7 @@ var router = express.Router();
 
 var json2yaml = require('./json2yaml.js');
 var json2cson = require('./json2cson.js');
+var json2json = require('./json2json.js');
 
 var sampleText = `
 {
@@ -46,6 +47,21 @@ router.post('/convert/json2cson', function (req, res) {
     var jsonText = req.body.text;
     var csonText = json2cson(jsonText);
     res.write(csonText);
+    res.end();
+});
+
+// GET /format/json
+router.get('/format/json', function (req, res) {
+    var unreadableText = sampleText.replace(/\s+/g, '') + "\n";
+    res.render('json/json2json', { title: 'JSON formatter', textFrom: unreadableText });
+});
+
+// POST /format/json
+// format jsonText passed via post parameters, into pretty nice json text.
+router.post('/format/json', function (req, res) {
+    var jsonText = req.body.text;
+    var prettyJsonText = json2json(jsonText);
+    res.write(prettyJsonText);
     res.end();
 });
 
