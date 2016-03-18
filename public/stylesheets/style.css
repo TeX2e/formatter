@@ -3,7 +3,8 @@
 /* user definition */
 
 body {
-  margin: 10px 50px;
+  margin-top: 10px;
+  margin-left: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -12,6 +13,7 @@ a {
 }
 
 main {
+  max-width: 1000px;
   background-color: white;
 }
 
