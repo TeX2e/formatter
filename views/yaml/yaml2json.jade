@@ -15,6 +15,6 @@ block append scripts
 block content
   h1= title
   
-  - var convertButton = "Convert YAML to JSON";
-  - var textFrom = "foo: true\nbar:\n- spam\n- ham\n- egg\nbaz:\n  baz: 123"
+  - var convertFrom = 'YAML'
+  - var convertTo   = 'JSON'
   include ../layout-convert.jade

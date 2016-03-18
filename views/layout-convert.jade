@@ -1,8 +1,17 @@
-//- this will be included by convert/xxx2yyy.jade
+//- this will be included by convert/xxx2yyy.jade (converter)
+
+//- parameters
+//- * convertFrom - a language to convert
+//- * convertTo   - a language converted
+//- * textFrom    - a text on textarea (convert from)
+//- * textTo      - a text on textarea (convert to)
 
 form(id="convertFrom")
+  label= convertFrom
   textarea(id="editorFrom" class="CodeMirror" name="text" cols="60" rows="20")= textFrom
-  button(type="button")= convertButton
+  - var convertButton = `Convert ${convertFrom} to ${convertTo}`
+  button(type="button" class="btn")= convertButton
   
 form(id="convertTo")
+  label= convertTo
   textarea(id="editorTo" class="CodeMirror" name="text" cols="60" rows="20")= textTo
