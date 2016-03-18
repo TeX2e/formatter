@@ -1,19 +1,30 @@
 
-html {
-    max-width: 900px;
-}
-
 body {
-    margin: 10px 50px;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 10px 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-    color: #00B7FF;
+  color: #00B7FF;
 }
 
 main {
-    background-color: white;
+  background-color: white;
+}
+
+.btn {
+  background: #3498db;
+  -webkit-border-radius: 20;
+  -moz-border-radius: 20;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  outline-style: none;
+}
+.btn:hover {
+    background: #3cb0fd;
 }
 
 /*--------------------------------------------------*/
@@ -21,60 +32,60 @@ main {
 
 #convertFrom,
 #convertTo {
-    display: inline-block;
-    vertical-align: top;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .CodeMirror {
-    width: 400px;
-    height: 400px;
-    font-family: Monaco, 'Andale Mono', 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
-    font-size: 10pt;
-    border: solid 1px #999;
+  width: 400px;
+  height: 400px;
+  font-family: Monaco, 'Andale Mono', 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
+  font-size: 10pt;
+  border: solid 1px #999;
 }
 
 /*--------------------------------------------------*/
 /* for Slideout.js */
 
 body {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .slideout-menu {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 0;
-    width: 256px;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  width: 256px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: none;
 }
 
 .slideout-panel {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .slideout-open,
 .slideout-open body,
 .slideout-open .slideout-panel {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .slideout-open .slideout-menu {
-    display: block;
+  display: block;
 }
 
 /* user def */
 
 .slideout-menu-toggle-button {
-    font-size: 24pt;
+  font-size: 24pt;
 }
 
 nav {
-    margin: 50px;
+  margin: 50px;
 }
