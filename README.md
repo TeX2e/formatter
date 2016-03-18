@@ -30,12 +30,6 @@ JSON, YAML, CSON
 
     POST /convert/cson2json
 
-<!--
-### XML
-
-    POST /convert/xml2json
--->
-
 
 Markdown, HTML & HTML previewer
 -------------------------------
@@ -50,8 +44,6 @@ Markdown, HTML & HTML previewer
     POST /convert/html2markdown
     POST /format/html
 
-Note: html `<script>` tags will be removed in previewer
-
 
 CSS, Sass, Scss, Less
 ---------------------
@@ -61,6 +53,7 @@ CSS, Sass, Scss, Less
     POST /convert/css2sass
     POST /convert/css2scss
     POST /convert/css2less
+    POST /format/css
 
 ### Sass
 
@@ -78,7 +71,7 @@ CSS, Sass, Scss, Less
 JavaScript, CoffeeScript, TypeScript
 ------------------------------------
 
-I have no ideas whether to implement converter or not.
+I have still no ideas whether to implement converter or not.
 
 ### JavaScript
 
