@@ -1,0 +1,24 @@
+extends ../layout
+
+block prepend stylesheets
+  link(rel="stylesheet", href="/CodeMirror/lib/codemirror.css")
+
+block append scripts
+  script(src="/CodeMirror/lib/codemirror.js")
+  script(src="/CodeMirror/addon/edit/closebrackets.js")
+  script(src="/CodeMirror/mode/xml/xml.js")
+  script(src="/CodeMirror/mode/css/css.js")
+  script(src="/CodeMirror/mode/javascript/javascript.js")
+  script(src="/CodeMirror/mode/htmlmixed/htmlmixed.js")
+  script(src="/CodeMirror/mode/markdown/markdown.js")
+  script.
+    window.editorFromOption = { mode: 'htmlmixed' };
+    window.editorToOption   = { mode: 'markdown' };
+  script(src="/javascripts/convert/process.js")
+
+block content
+  h1= title
+  
+  - var convertFrom = 'HTML'
+  - var convertTo   = 'Markdown'
+  include ../layout-convert.jade
