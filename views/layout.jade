@@ -25,10 +25,24 @@ html
         section(class="menu-section")
           h3(class="menu-section-title") JSON
           ul(class="menu-section-list")
-            li: a(href="/convert/json2yaml" target="_blank") convert json → yaml
-            li: a(href="/convert/json2cson" target="_blank") convert json → cson
-            li: a(href="/convert/yaml2json" target="_blank") convert yaml → json
-            li: a(href="/convert/cson2json" target="_blank") convert cson → json
+            li: a(href="/convert/json2yaml") convert json → yaml
+            li: a(href="/convert/json2cson") convert json → cson
+            li: a(href="/format/json") format json
+          h3(class="menu-section-title") YAML
+          ul(class="menu-section-list")
+            li: a(href="/convert/yaml2json") convert yaml → json
+          h3(class="menu-section-title") CSON
+          ul(class="menu-section-list")
+            li: a(href="/convert/cson2json") convert cson → json
+        section(class="menu-section")
+          h3(class="menu-section-title") Markdown
+          ul(class="menu-section-list")
+            li: a(href="/convert/markdown2html") convert markdown → html
+            li: a(href="/view/markdown") view markdown
+          h3(class="menu-section-title") HTML
+          ul(class="menu-section-list")
+            li: a(href="/convert/markdown2html") convert html → markdown
+            li: a(href="/format/html") format html
 
     main#panel
       header
