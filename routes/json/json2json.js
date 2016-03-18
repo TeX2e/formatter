@@ -2,8 +2,8 @@
 var jsonlint = require("jsonlint");
 var CSON = require('cson');
 
-// convert a json text to a cson text
-// return cson string
+// convert a json text to a json text to pretty print
+// return json string
 function convertJSONtoJSON(jsonText) {
     try {
         jsonlint.parse(jsonText);
