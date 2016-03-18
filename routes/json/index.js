@@ -24,7 +24,7 @@ var sampleText = `
 
 // GET /convert/json2yaml
 router.get('/convert/json2yaml', function (req, res) {
-    res.render('json/json2yaml', { title: 'JSON formatter', textFrom: sampleText });
+    res.render('json/json2yaml', { title: 'JSON to YAML', textFrom: sampleText });
 });
 
 // POST /convert/json2yaml
@@ -38,7 +38,7 @@ router.post('/convert/json2yaml', function (req, res) {
 
 // GET /convert/json2cson
 router.get('/convert/json2cson', function (req, res) {
-    res.render('json/json2cson', { title: 'JSON formatter', textFrom: sampleText });
+    res.render('json/json2cson', { title: 'JSON to CSON', textFrom: sampleText });
 });
 
 // POST /convert/json2cson
