@@ -43,7 +43,7 @@ Markdown, HTML & HTML previewer
 ### Markdown
 
     POST /convert/markdown2html
-    POST /format/markdown-preview
+    POST /view/markdown
 
 ### HTML
 

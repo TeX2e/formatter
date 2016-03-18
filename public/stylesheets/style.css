@@ -27,18 +27,30 @@ main {
     background: #3cb0fd;
 }
 
-/*--------------------------------------------------*/
-/* for CodeMirror */
-
 #convertFrom,
 #convertTo {
   display: inline-block;
   vertical-align: top;
 }
 
+#viewFrom,
+#viewTo {
+  width: 400px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#viewTo {
+  margin-left: 30px;
+  word-wrap: break-word;
+}
+
+/*--------------------------------------------------*/
+/* for CodeMirror */
+
 .CodeMirror {
   width: 400px;
-  height: 400px;
+  height: 500px;
   font-family: Monaco, 'Andale Mono', 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
   font-size: 10pt;
   border: solid 1px #999;
