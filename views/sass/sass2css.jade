@@ -1,17 +1,17 @@
 extends ../layout
 
 block prepend stylesheets
-  link(rel="stylesheet", type="text/css", href="/CodeMirror/lib/codemirror.css")
+  link(rel="stylesheet", href="/CodeMirror/lib/codemirror.css")
 
 block append scripts
-  script(type="application/javascript", src="/CodeMirror/lib/codemirror.js")
-  script(type="application/javascript", src="/CodeMirror/addon/edit/closebrackets.js")
-  script(type="application/javascript", src="/CodeMirror/mode/sass/sass.js")
-  script(type="application/javascript", src="/CodeMirror/mode/css/css.js")
+  script(src="/CodeMirror/lib/codemirror.js")
+  script(src="/CodeMirror/addon/edit/closebrackets.js")
+  script(src="/CodeMirror/mode/sass/sass.js")
+  script(src="/CodeMirror/mode/css/css.js")
   script.
     window.editorFromOption = { mode: 'sass' };
     window.editorToOption   = { mode: 'css' };
-  script(type="application/javascript", src="/javascripts/convert/process.js")
+  script(src="/javascripts/convert/process.js")
 
 block content
   h1= title

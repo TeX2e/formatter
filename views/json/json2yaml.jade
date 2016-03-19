@@ -1,16 +1,16 @@
 extends ../layout
 
 block prepend stylesheets
-  link(rel="stylesheet", type="text/css", href="/CodeMirror/lib/codemirror.css")
+  link(rel="stylesheet", href="/CodeMirror/lib/codemirror.css")
   
 block append scripts
-  script(type="application/javascript", src="/CodeMirror/lib/codemirror.js")
-  script(type="application/javascript", src="/CodeMirror/addon/edit/closebrackets.js")
-  script(type="application/javascript", src="/CodeMirror/mode/yaml/yaml.js")
+  script(src="/CodeMirror/lib/codemirror.js")
+  script(src="/CodeMirror/addon/edit/closebrackets.js")
+  script(src="/CodeMirror/mode/yaml/yaml.js")
   script.
     window.editorFromOption = {};
     window.editorToOption   = { mode: 'yaml' };
-  script(type="application/javascript", src="/javascripts/convert/process.js")
+  script(src="/javascripts/convert/process.js")
 
 block content
   h1= title
