@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 
+var routerHelper = require('../helper.js');
 var cson2json = require('./cson2json.js');
 
 var sampleText = `
@@ -18,21 +19,14 @@ dict:
 `;
 
 // GET /convert/cson2json
-router.get('/convert/cson2json', function (req, res) {
-    res.render('cson/cson2json', {
-        title: 'CSON to JSON',
-        textFrom: sampleText,
-        convertFrom: 'CSON',
-        convertTo: 'JSON'
-    });
-});
-
 // POST /convert/cson2json
-router.post('/convert/cson2json', function (req, res) {
-    var csonText = req.body.text;
-    var jsonText = cson2json(csonText);
-    res.write(jsonText);
-    res.end();
+router = routerHelper.addConverterAPI(router, {
+    url: '/convert/cson2json',
+    from: 'CSON',
+    to: 'JSON',
+    renderer: 'cson/cson2json',
+    converter: cson2json,
+    sampleText: sampleText
 });
 
 module.exports = router;

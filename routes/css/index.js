@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 
+var routerHelper = require('../helper.js');
 var css2css = require('./css2css.js');
 var css2cssmin = require('./css2cssmin.js');
 
@@ -22,40 +23,27 @@ a:active {
 `;
 
 // GET /format/css
-router.get('/format/css', function (req, res) {
-    var unreadableText = sampleText.replace(/\n\s*/g, '') + "\n";
-    res.render('css/css2css', {
-        title: 'Pretty Print CSS',
-        textFrom: unreadableText,
-        convertFrom: 'CSS',
-        convertTo: 'Pretty Print CSS'
-    });
-});
-
 // POST /format/css
-router.post('/format/css', function (req, res) {
-    var cssText = req.body.text;
-    var cssminText = css2css(cssText);
-    res.write(cssminText);
-    res.end();
+router = routerHelper.addConverterAPI(router, {
+    url: '/format/css',
+    title: 'Pretty Print CSS',
+    from: 'CSS',
+    to: 'Pretty Print CSS',
+    renderer: 'css/css2css',
+    converter: css2css,
+    sampleText: sampleText
 });
 
 // GET /minify/css
-router.get('/minify/css', function (req, res) {
-    res.render('css/css2cssmin', {
-        title: 'Minify CSS',
-        textFrom: sampleText,
-        convertFrom: 'CSS',
-        convertTo: 'Minified CSS'
-    });
-});
-
 // POST /minify/css
-router.post('/minify/css', function (req, res) {
-    var cssText = req.body.text;
-    var cssminText = css2cssmin(cssText);
-    res.write(cssminText);
-    res.end();
+router = routerHelper.addConverterAPI(router, {
+    url: '/minify/css',
+    title: 'Minify CSS',
+    from: 'CSS',
+    to: 'Minified CSS',
+    renderer: 'css/css2css',
+    converter: css2css,
+    sampleText: sampleText
 });
 
 module.exports = router;

@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 
+var routerHelper = require('../helper.js');
 var less2css = require('./less2css.js');
 
 var sampleText = `
@@ -29,22 +30,14 @@ p {
 `;
 
 // GET /convert/less2css
-router.get('/convert/less2css', function (req, res) {
-    res.render('less/less2css', {
-        title: 'Less to CSS',
-        textFrom: sampleText,
-        convertFrom: 'Less',
-        convertTo: 'CSS'
-    });
-});
-
 // POST /convert/less2css
-// convert markdownText passed via post parameters, into html text.
-router.post('/convert/less2css', function (req, res) {
-    var lessText = req.body.text;
-    var cssText = less2css(lessText);
-    res.write(cssText);
-    res.end();
+router = routerHelper.addConverterAPI(router, {
+    url: '/convert/less2css',
+    from: 'Less',
+    to: 'CSS',
+    renderer: 'less/less2css',
+    converter: less2css,
+    sampleText: sampleText
 });
 
 module.exports = router;

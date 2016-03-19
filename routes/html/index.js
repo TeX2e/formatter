@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 
+var routerHelper = require('../helper.js');
 var html2html = require('./html2html.js');
 var html2markdown = require('./html2markdown.js');
 
@@ -30,42 +31,27 @@ var sampleText = `
 `;
 
 // GET /convert/html2markdown
-router.get('/convert/html2markdown', function (req, res) {
-    res.render('html/html2markdown', {
-        title: 'HTML to Markdown',
-        textFrom: sampleText,
-        convertFrom: 'HTML',
-        convertTo: 'Markdown'
-    });
-});
-
 // POST /convert/html2markdown
-// convert a html text passed via post parameters, into markdown text.
-router.post('/convert/html2markdown', function (req, res) {
-    var htmlText = req.body.text;
-    var markdownText = html2markdown(htmlText);
-    res.write(markdownText);
-    res.end();
+router = routerHelper.addConverterAPI(router, {
+    url: '/convert/html2markdown',
+    from: 'HTML',
+    to: 'Markdown',
+    renderer: 'html/html2markdown',
+    converter: html2markdown,
+    sampleText: sampleText
 });
 
 // GET /format/html
-router.get('/format/html', function (req, res) {
-    var unreadableText = sampleText.replace(/\n\s*/g, '') + "\n";
-    res.render('html/html2html', {
-        title: 'HTML formatter',
-        textFrom: unreadableText,
-        convertFrom: 'HTML',
-        convertTo: 'Pretty Print HTML'
-    });
-});
-
 // POST /format/html
-// convert a html text into pretty print html
-router.post('/format/html', function (req, res) {
-    var markdownText = req.body.text;
-    var htmlText = html2html(markdownText);
-    res.write(htmlText);
-    res.end();
+var unreadableText = sampleText.replace(/\n\s*/g, '') + "\n";
+router = routerHelper.addConverterAPI(router, {
+    url: '/format/html',
+    title: 'Pretty Print HTML',
+    from: 'HTML',
+    to: 'Pretty Print HTML',
+    renderer: 'html/html2html',
+    converter: html2html,
+    sampleText: unreadableText
 });
 
 module.exports = router;

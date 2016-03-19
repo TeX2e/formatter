@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 
+var routerHelper = require('../helper.js');
 var markdown2html = require('./markdown2html.js');
 
 var sampleText = `
@@ -27,22 +28,14 @@ enumerate
 `;
 
 // GET /convert/markdown2html
-router.get('/convert/markdown2html', function (req, res) {
-    res.render('markdown/markdown2html', {
-        title: 'Markdown to HTML',
-        textFrom: sampleText,
-        convertFrom: 'Markdown',
-        convertTo: 'HTML'
-    });
-});
-
 // POST /convert/markdown2html
-// convert markdownText passed via post parameters, into html text.
-router.post('/convert/markdown2html', function (req, res) {
-    var markdownText = req.body.text;
-    var htmlText = markdown2html(markdownText);
-    res.write(htmlText);
-    res.end();
+router = routerHelper.addConverterAPI(router, {
+    url: '/convert/markdown2html',
+    from: 'Markdown',
+    to: 'HTML',
+    renderer: 'markdown/markdown2html',
+    converter: markdown2html,
+    sampleText: sampleText
 });
 
 // GET /view/markdown
