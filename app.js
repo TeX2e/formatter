@@ -13,6 +13,7 @@ var cson = require('./routes/cson/index');
 var markdown = require('./routes/markdown/index');
 var html = require('./routes/html/index');
 var sass = require('./routes/sass/index');
+var scss = require('./routes/scss/index');
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use('/', cson);
 app.use('/', markdown);
 app.use('/', html);
 app.use('/', sass);
+app.use('/', scss);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

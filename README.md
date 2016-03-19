@@ -45,7 +45,7 @@ Markdown, HTML & HTML previewer
     POST /format/html
 
 
-CSS, Sass, Scss, Less
+CSS, Sass, SCSS, Less
 ---------------------
 
 ### CSS
@@ -59,7 +59,7 @@ CSS, Sass, Scss, Less
 
     POST /convert/sass2css
 
-### Scss
+### SCSS
 
     POST /convert/scss2css
 
