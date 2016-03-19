@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 
+var routerHelper = require('../helper.js');
 var scss2css = require('./scss2css.js');
 
 var sampleText = `
@@ -31,22 +32,14 @@ main {
 `;
 
 // GET /convert/scss2css
-router.get('/convert/scss2css', function (req, res) {
-    res.render('scss/scss2css', {
-        title: 'SCSS to CSS',
-        textFrom: sampleText,
-        convertFrom: 'SCSS',
-        convertTo: 'CSS'
-    });
-});
-
 // POST /convert/scss2css
-// convert markdownText passed via post parameters, into html text.
-router.post('/convert/scss2css', function (req, res) {
-    var sassText = req.body.text;
-    var cssText = scss2css(sassText);
-    res.write(cssText);
-    res.end();
+router = routerHelper.addConverterAPI(router, {
+    url: '/convert/scss2css',
+    from: 'SCSS',
+    to: 'CSS',
+    renderer: 'scss/scss2css',
+    converter: scss2css,
+    sampleText: sampleText
 });
 
 module.exports = router;

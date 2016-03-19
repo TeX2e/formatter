@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 
+var routerHelper = require('../helper.js');
 var yaml2json = require('./yaml2json.js');
 
 var sampleText = `
@@ -17,22 +18,14 @@ dict:
 `;
 
 // GET /convert/yaml2json
-router.get('/convert/yaml2json', function (req, res) {
-    res.render('yaml/yaml2json', {
-        title: 'YAML to JSON',
-        textFrom: sampleText,
-        convertFrom: 'YAML',
-        convertTo: 'JSON'
-    });
-});
-
 // POST /convert/yaml2json
-// convert yamlText if text is passed via post parameters.
-router.post('/convert/yaml2json', function (req, res) {
-    var yamlText = req.body.text;
-    var jsonText = yaml2json(yamlText);
-    res.write(jsonText);
-    res.end();
+router = routerHelper.addConverterAPI(router, {
+    url: '/convert/yaml2json',
+    from: 'YAML',
+    to: 'JSON',
+    renderer: 'yaml/yaml2json',
+    converter: yaml2json,
+    sampleText: sampleText
 });
 
 module.exports = router;

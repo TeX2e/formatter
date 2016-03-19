@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 
+var routerHelper = require('../helper.js');
 var json2yaml = require('./json2yaml.js');
 var json2cson = require('./json2cson.js');
 var json2json = require('./json2json.js');
@@ -23,61 +24,37 @@ var sampleText = `
 `;
 
 // GET /convert/json2yaml
-router.get('/convert/json2yaml', function (req, res) {
-    res.render('json/json2yaml', {
-        title: 'JSON to YAML',
-        textFrom: sampleText,
-        convertFrom: 'JSON',
-        convertTo: 'YAML'
-    });
-});
-
 // POST /convert/json2yaml
-// convert jsonText passed via post parameters, into yaml.
-router.post('/convert/json2yaml', function (req, res) {
-    var jsonText = req.body.text;
-    var yamlText = json2yaml(jsonText);
-    res.write(yamlText);
-    res.end();
+router = routerHelper.addConverterAPI(router, {
+    url: '/convert/json2yaml',
+    from: 'JSON',
+    to: 'YAML',
+    renderer: 'json/json2yaml',
+    converter: json2yaml,
+    sampleText: sampleText
 });
 
 // GET /convert/json2cson
-router.get('/convert/json2cson', function (req, res) {
-    res.render('json/json2cson', {
-        title: 'JSON to CSON',
-        textFrom: sampleText,
-        convertFrom: 'JSON',
-        convertTo: 'CSON'
-    });
-});
-
 // POST /convert/json2cson
-// convert jsonText passed via post parameters, into cson.
-router.post('/convert/json2cson', function (req, res) {
-    var jsonText = req.body.text;
-    var csonText = json2cson(jsonText);
-    res.write(csonText);
-    res.end();
+router = routerHelper.addConverterAPI(router, {
+    url: '/convert/json2cson',
+    from: 'JSON',
+    to: 'CSON',
+    renderer: 'json/json2cson',
+    converter: json2cson,
+    sampleText: sampleText
 });
 
 // GET /format/json
-router.get('/format/json', function (req, res) {
-    var unreadableText = sampleText.replace(/\s+/g, '') + "\n";
-    res.render('json/json2json', {
-        title: 'JSON formatter',
-        textFrom: unreadableText,
-        convertFrom: 'JSON',
-        convertTo: 'Pretty Print JSON'
-    });
-});
-
 // POST /format/json
-// format jsonText passed via post parameters, into pretty nice json text.
-router.post('/format/json', function (req, res) {
-    var jsonText = req.body.text;
-    var prettyJsonText = json2json(jsonText);
-    res.write(prettyJsonText);
-    res.end();
+var unreadableText = sampleText.replace(/\s+/g, '') + "\n";
+router = routerHelper.addConverterAPI(router, {
+    url: '/format/json',
+    from: 'JSON',
+    to: 'Pretty Print JSON',
+    renderer: 'json/json2json',
+    converter: json2json,
+    sampleText: unreadableText
 });
 
 module.exports = router;

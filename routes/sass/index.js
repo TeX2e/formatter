@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 
+var routerHelper = require('../helper.js');
 var sass2css = require('./sass2css.js');
 
 var sampleText = `
@@ -27,22 +28,14 @@ main
 `;
 
 // GET /convert/sass2css
-router.get('/convert/sass2css', function (req, res) {
-    res.render('sass/sass2css', {
-        title: 'Sass to CSS',
-        textFrom: sampleText,
-        convertFrom: 'Sass',
-        convertTo: 'CSS'
-    });
-});
-
 // POST /convert/sass2css
-// convert markdownText passed via post parameters, into html text.
-router.post('/convert/sass2css', function (req, res) {
-    var sassText = req.body.text;
-    var cssText = sass2css(sassText);
-    res.write(cssText);
-    res.end();
+router = routerHelper.addConverterAPI(router, {
+    url: '/convert/sass2css',
+    from: 'Sass',
+    to: 'CSS',
+    renderer: 'sass/sass2css',
+    converter: sass2css,
+    sampleText: sampleText
 });
 
 module.exports = router;
