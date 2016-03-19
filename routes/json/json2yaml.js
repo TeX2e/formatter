@@ -2,8 +2,7 @@
 var jsonlint = require("jsonlint");
 var YAML = require('yamljs');
 
-// convert a json text to a yaml text
-// return yaml string
+// convert json to yaml
 function convertJSONtoYAML(jsonText) {
     try {
         jsonlint.parse(jsonText);

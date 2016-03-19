@@ -2,8 +2,8 @@ extends ../layout-converter
 
 block append scripts
   script.
-    window.editorFromOption = {};
-    window.editorToOption   = {};
+    window.editorFromOption = {}; // mode: json
+    window.editorToOption   = {}; // mode: json
   script(src="/javascripts/converter/process.js")
 
 block append content

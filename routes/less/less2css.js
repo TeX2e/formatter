@@ -1,9 +1,8 @@
 
 var less = require('less');
 
-// convert a less text to a css text
-// return css string
-function convertSassToCSS(lessText) {
+// convert less to css
+function convertLessToCSS(lessText) {
     try {
         var cssText;
         less.render(lessText, function (e, result) {
@@ -15,4 +14,4 @@ function convertSassToCSS(lessText) {
     }
 }
 
-module.exports = convertSassToCSS;
+module.exports = convertLessToCSS;

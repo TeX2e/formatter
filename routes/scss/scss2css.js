@@ -1,8 +1,7 @@
 
 var scss = require('node-sass');
 
-// convert a sass text to a css text
-// return css string
+// convert scss to css
 function convertSCSStoCSS(sassText) {
     try {
         var result = scss.renderSync({

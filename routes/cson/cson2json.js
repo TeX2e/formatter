@@ -1,8 +1,7 @@
 
 var CSON = require('cson');
 
-// convert a cson text to a json text
-// return json string
+// convert cson to json
 function convertCSONtoJSON(csonText) {
     var jsonObj = CSON.parse(csonText);
 

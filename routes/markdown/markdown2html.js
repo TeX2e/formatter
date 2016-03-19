@@ -1,8 +1,7 @@
 
 var marked = require('marked');
 
-// convert a markdown text to a html text
-// return html string
+// convert markdown to html
 function convertMarkdownToHTML(markdownText) {
     marked.setOptions({
         renderer: new marked.Renderer(),
@@ -14,8 +13,12 @@ function convertMarkdownToHTML(markdownText) {
         smartLists: true,
         smartypants: false
     });
-    var htmlText = marked(markdownText);
-    return htmlText;
+
+    try {
+        return marked(markdownText);
+    } catch (e) {
+        return e.toString();
+    }
 }
 
 module.exports = convertMarkdownToHTML;

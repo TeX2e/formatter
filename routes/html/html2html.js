@@ -1,10 +1,13 @@
 
 var pretty = require('pretty');
 
-// convert a html text to a html text to pretty print
-// return html string
+// pretty print html
 function convertHTMLtoHTML(htmlText) {
-    return pretty(htmlText);
+    try {
+        return pretty(htmlText);
+    } catch (e) {
+        return e.toString();
+    }
 }
 
 module.exports = convertHTMLtoHTML;

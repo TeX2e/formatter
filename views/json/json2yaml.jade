@@ -3,7 +3,7 @@ extends ../layout-converter
 block append scripts
   script(src="/CodeMirror/mode/yaml/yaml.js")
   script.
-    window.editorFromOption = {};
+    window.editorFromOption = {}; // mode: json
     window.editorToOption   = { mode: 'yaml' };
   script(src="/javascripts/converter/process.js")
 

@@ -1,8 +1,7 @@
 
 var YAML = require('yamljs');
 
-// convert a yaml text to a json text
-// return json string
+// convert yaml to json
 function convertYAMLtoJSON(yamlText) {
     var jsonObj;
     try {
