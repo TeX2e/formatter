@@ -18,10 +18,11 @@ module.exports.addConverterAPI = function (_router, args) {
     var convertTo   = args.to;               // string (language name)  e.g. "CSON"
     var renderer    = args.renderer;         // string (renderer path in views)  e.g. "json/json2cson"
     var converter   = args.converter;        // function (converts A to B and returns B)
+    var title       = args.title || `Convert ${convertFrom} to ${convertTo}`;
+                                             // string (title)
     var sampleText  = args.sampleText || ''; // string (set a sample text by default)
 
     // GET /convert/aaa2bbb
-    var title = `Convert ${convertFrom} to ${convertTo}`;
     router.get(url, function (req, res) {
         res.render(renderer, {
             title: title,
