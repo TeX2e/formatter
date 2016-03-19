@@ -6,6 +6,7 @@ var routerHelper = require('../helper.js');
 var json2yaml = require('./json2yaml.js');
 var json2cson = require('./json2cson.js');
 var json2json = require('./json2json.js');
+var json2jsonmin = require('./json2jsonmin.js');
 
 var sampleText = `
 {
@@ -55,6 +56,18 @@ router = routerHelper.addConverterAPI(router, {
     renderer: 'json/json2json',
     converter: json2json,
     sampleText: unreadableText
+});
+
+// GET /minify/json
+// POST /minify/json
+router = routerHelper.addConverterAPI(router, {
+    url: '/minify/json',
+    title: 'Minify JSON'
+    from: 'JSON',
+    to: 'Minified JSON',
+    renderer: 'json/json2jsonmin',
+    converter: json2jsonmin,
+    sampleText: sampleText
 });
 
 module.exports = router;
