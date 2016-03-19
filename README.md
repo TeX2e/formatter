@@ -12,15 +12,12 @@ API
 
     GET /features
 
-
-JSON, YAML, CSON
-----------------
-
 ### JSON
 
     POST /convert/json2yaml
     POST /convert/json2cson
     POST /format/json
+    POST /minify/json
 
 ### YAML
 
@@ -30,9 +27,10 @@ JSON, YAML, CSON
 
     POST /convert/cson2json
 
+### XML
 
-Markdown, HTML & HTML previewer
--------------------------------
+    POST /format/xml
+    POST /minify/xml
 
 ### Markdown
 
@@ -44,16 +42,10 @@ Markdown, HTML & HTML previewer
     POST /convert/html2markdown
     POST /format/html
 
-
-CSS, Sass, SCSS, Less
----------------------
-
 ### CSS
 
-    POST /convert/css2sass
-    POST /convert/css2scss
-    POST /convert/css2less
     POST /format/css
+    POST /minify/css
 
 ### Sass
 
@@ -67,16 +59,11 @@ CSS, Sass, SCSS, Less
 
     POST /convert/less2css
 
-
-JavaScript, CoffeeScript, TypeScript
-------------------------------------
-
-I have still no ideas whether to implement converter or not.
-
 ### JavaScript
 
     POST /convert/js2coffee
-    POST /format/js-pretty-print
+    POST /format/js
+    POST /minify/js
 
 ### CoffeeScript
 
