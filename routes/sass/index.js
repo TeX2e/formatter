@@ -14,12 +14,12 @@ $primary-color: #333
   border-radius:         $radius
 
 
-body
-  color: $primary-color
+main
+  padding: 6px 12px
 
-  nav
-    a
-      padding: 6px 12px
+  a
+    color: $primary-color
+    &:hover
       text-decoration: none
 
 .box
