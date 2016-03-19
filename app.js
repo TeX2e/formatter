@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
 var json = require('./routes/json/index');
 var yaml = require('./routes/yaml/index');
 var cson = require('./routes/cson/index');
@@ -32,16 +31,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
-app.use('/', json);
-app.use('/', yaml);
-app.use('/', cson);
-app.use('/', markdown);
-app.use('/', html);
-app.use('/', css);
-app.use('/', sass);
-app.use('/', scss);
-app.use('/', less);
+app.use('/', [json, yaml, cson, markdown, html, css, sass, scss, less]);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
