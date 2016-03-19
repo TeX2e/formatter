@@ -1,0 +1,29 @@
+//- this will be included by view/xxx.jade (viewer)
+
+//- parameters
+//- * viewFrom - a language to convert
+//- * viewTo   - a language converted
+//- * textFrom - a text on textarea (convert from)
+//- * textTo   - a html text (convert to)
+//-   Do not forget to sanitize, because against the XSS attack
+
+extends layout
+
+block prepend stylesheets
+  link(rel="stylesheet", href="/CodeMirror/lib/codemirror.css")
+    
+block append scripts
+  script(src="/CodeMirror/lib/codemirror.js")
+  script(src="/CodeMirror/addon/edit/closebrackets.js")
+
+block append content
+  form#viewFrom
+    label= viewFrom
+    textarea#editorFrom(class="CodeMirror" name="text" cols="60" rows="20")= textFrom
+    - var convertButton = `${viewFrom} preview`
+    button(type="button" class="btn")= convertButton
+
+  form#viewTo
+    label= viewTo
+    #textTo.markdown-body
+      != textTo
