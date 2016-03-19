@@ -31,7 +31,12 @@ var sampleText = `
 
 // GET /convert/html2markdown
 router.get('/convert/html2markdown', function (req, res) {
-    res.render('html/html2markdown', { title: 'HTML to Markdown', textFrom: sampleText });
+    res.render('html/html2markdown', {
+        title: 'HTML to Markdown',
+        textFrom: sampleText,
+        convertFrom: 'HTML',
+        convertTo: 'Markdown'
+    });
 });
 
 // POST /convert/html2markdown
@@ -46,7 +51,12 @@ router.post('/convert/html2markdown', function (req, res) {
 // GET /format/html
 router.get('/format/html', function (req, res) {
     var unreadableText = sampleText.replace(/\n\s*/g, '') + "\n";
-    res.render('html/html2html', { title: 'HTML formatter', textFrom: unreadableText });
+    res.render('html/html2html', {
+        title: 'HTML formatter',
+        textFrom: unreadableText,
+        convertFrom: 'HTML',
+        convertTo: 'Pretty Print HTML'
+    });
 });
 
 // POST /format/html

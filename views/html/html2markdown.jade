@@ -1,11 +1,6 @@
-extends ../layout
-
-block prepend stylesheets
-  link(rel="stylesheet", href="/CodeMirror/lib/codemirror.css")
+extends ../layout-converter
 
 block append scripts
-  script(src="/CodeMirror/lib/codemirror.js")
-  script(src="/CodeMirror/addon/edit/closebrackets.js")
   script(src="/CodeMirror/mode/xml/xml.js")
   script(src="/CodeMirror/mode/css/css.js")
   script(src="/CodeMirror/mode/javascript/javascript.js")
@@ -16,9 +11,5 @@ block append scripts
     window.editorToOption   = { mode: 'markdown' };
   script(src="/javascripts/convert/process.js")
 
-block content
-  h1= title
+block append content
   
-  - var convertFrom = 'HTML'
-  - var convertTo   = 'Markdown'
-  include ../layout-convert.jade

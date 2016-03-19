@@ -1,20 +1,10 @@
-extends ../layout
-
-block prepend stylesheets
-  link(rel="stylesheet", href="/CodeMirror/lib/codemirror.css")
+extends ../layout-viewer
 
 block append scripts
-  script(src="/javascripts/lib/underscore-min.js")
-  script(src="/CodeMirror/lib/codemirror.js")
-  script(src="/CodeMirror/addon/edit/closebrackets.js")
   script(src="/CodeMirror/mode/markdown/markdown.js")
   script.
     window.editorFromOption = { mode: 'markdown' };
   script(src="/javascripts/viewer/process.js")
 
-block content
-  h1= title
+block append content
   
-  - var viewFrom = 'Markdown'
-  - var viewTo   = 'HTML preview'
-  include ../layout-view.jade

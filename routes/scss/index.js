@@ -32,7 +32,12 @@ main {
 
 // GET /convert/scss2css
 router.get('/convert/scss2css', function (req, res) {
-    res.render('scss/scss2css', { title: 'SCSS to CSS', textFrom: sampleText });
+    res.render('scss/scss2css', {
+        title: 'SCSS to CSS',
+        textFrom: sampleText,
+        convertFrom: 'SCSS',
+        convertTo: 'CSS'
+    });
 });
 
 // POST /convert/scss2css

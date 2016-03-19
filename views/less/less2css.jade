@@ -1,20 +1,11 @@
-extends ../layout
-
-block prepend stylesheets
-  link(rel="stylesheet", href="/CodeMirror/lib/codemirror.css")
+extends ../layout-converter
 
 block append scripts
-  script(src="/CodeMirror/lib/codemirror.js")
-  script(src="/CodeMirror/addon/edit/closebrackets.js")
   script(src="/CodeMirror/mode/css/css.js")
   script.
     window.editorFromOption = { mode: 'css' };
     window.editorToOption   = { mode: 'css' };
-  script(src="/javascripts/convert/process.js")
+  script(src="/javascripts/converter/process.js")
 
-block content
-  h1= title
+block append content
   
-  - var convertFrom = 'Less'
-  - var convertTo   = 'CSS'
-  include ../layout-convert.jade

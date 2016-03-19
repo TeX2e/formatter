@@ -30,7 +30,12 @@ p {
 
 // GET /convert/less2css
 router.get('/convert/less2css', function (req, res) {
-    res.render('less/less2css', { title: 'Less to CSS', textFrom: sampleText });
+    res.render('less/less2css', {
+        title: 'Less to CSS',
+        textFrom: sampleText,
+        convertFrom: 'Less',
+        convertTo: 'CSS'
+    });
 });
 
 // POST /convert/less2css

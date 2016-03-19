@@ -1,0 +1,27 @@
+//- parameters
+//- * convertFrom - a language to convert
+//- * convertTo   - a language converted
+//- * textFrom    - a text on textarea (convert from)
+//- * textTo      - a text on textarea (convert to)
+
+extends layout
+
+block prepend stylesheets
+  link(rel="stylesheet", href="/CodeMirror/lib/codemirror.css")
+    
+block append scripts
+  script(src="/CodeMirror/lib/codemirror.js")
+  script(src="/CodeMirror/addon/edit/closebrackets.js")
+  
+block append content
+  h2= title
+  
+  form(id="convertFrom")
+    label= convertFrom
+    textarea(id="editorFrom" class="CodeMirror" name="text" cols="60" rows="20")= textFrom
+    - var convertButton = `Convert ${convertFrom} to ${convertTo}`
+    button(type="button" class="btn")= convertButton
+    
+  form(id="convertTo")
+    label= convertTo
+    textarea(id="editorTo" class="CodeMirror" name="text" cols="60" rows="20")= textTo

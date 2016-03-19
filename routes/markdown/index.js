@@ -28,7 +28,12 @@ enumerate
 
 // GET /convert/markdown2html
 router.get('/convert/markdown2html', function (req, res) {
-    res.render('markdown/markdown2html', { title: 'Markdown to HTML', textFrom: sampleText });
+    res.render('markdown/markdown2html', {
+        title: 'Markdown to HTML',
+        textFrom: sampleText,
+        convertFrom: 'Markdown',
+        convertTo: 'HTML'
+    });
 });
 
 // POST /convert/markdown2html
@@ -43,7 +48,12 @@ router.post('/convert/markdown2html', function (req, res) {
 // GET /view/markdown
 // markdown previewer
 router.get('/view/markdown', function (req, res) {
-    res.render('markdown/viewer', { title: 'Markdown Viewer', textFrom: sampleText });
+    res.render('markdown/viewer', {
+        title: 'Markdown Viewer',
+        textFrom: sampleText,
+        viewFrom: 'Markdown',
+        viewTo: 'Preview'
+    });
 });
 
 // POST /view/markdown
