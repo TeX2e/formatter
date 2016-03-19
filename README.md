@@ -1,77 +1,219 @@
 
 formatter
-=========
+==========
 
 __This Project is Still Under Construction!__
 
 
 API
------
+==========
 
-### Getting Routes
 
-    GET /features
+JSON
+----------
 
-### JSON
+##### POST /convert/json2yaml
 
-    POST /convert/json2yaml
-    POST /convert/json2cson
-    POST /format/json
-    POST /minify/json
+convert JSON to YAML
 
-### YAML
+parameters
 
-    POST /convert/yaml2json
+- text : JSON text
 
-### CSON
+##### POST /convert/json2cson
 
-    POST /convert/cson2json
+convert JSON to CSON
 
-### XML
+parameters
 
-    POST /format/xml
-    POST /minify/xml
+- text : JSON text
 
-### Markdown
+##### POST /format/json
 
-    POST /convert/markdown2html
-    POST /view/markdown
+pretty print JSON
 
-### HTML
+parameters
 
-    POST /convert/html2markdown
-    POST /format/html
+- text : JSON text
 
-### CSS
+##### POST /minify/json
 
-    POST /format/css
-    POST /minify/css
+minify JSON
 
-### Sass
+parameters
 
-    POST /convert/sass2css
+- text : JSON text
 
-### SCSS
 
-    POST /convert/scss2css
+YAML
+----------
 
-### Less
+##### POST /convert/yaml2json
 
-    POST /convert/less2css
+convert YAML to JSON
 
-### JavaScript
+parameters
 
-    POST /convert/js2coffee
-    POST /format/js
-    POST /minify/js
+- text : YAML text
 
-### CoffeeScript
 
-    POST /convert/coffee2js
+CSON
+----------
 
-### TypeScript
+##### POST /convert/cson2json
 
-    POST /convert/type2js
+convert CSON to JSON
+
+parameters
+
+- text : CSON text
+
+XML
+----------
+
+##### POST /format/xml
+
+pretty print XML
+
+parameters
+
+- text : XML text
+
+##### POST /minify/xml
+
+minify XML
+
+parameters
+
+- text : XML text
+
+
+Markdown
+----------
+
+##### POST /convert/markdown2html
+
+convert Markdown to HTML
+
+parameters
+
+- text : Markdown text
+
+##### POST /view/markdown
+
+convert Markdown to HTML (same to be POST /convert/markdown2html)
+
+parameters
+
+- text : Markdown text
+
+
+HTML
+----------
+
+##### POST /convert/html2markdown
+
+convert HTML to Markdown
+
+parameters
+
+- text : HTML text
+
+##### POST /format/html
+
+pretty print HTML
+
+parameters
+
+- text : HTML text
+
+
+CSS
+----------
+
+##### POST /format/css
+
+pretty print CSS
+
+parameters
+
+- text : CSS text
+
+##### POST /minify/css
+
+minify CSS
+
+parameters
+
+- text : CSS text
+
+
+Sass
+----------
+
+##### POST /convert/sass2css
+
+convert Sass to CSS
+
+parameters
+
+- text : Sass text
+
+
+SCSS
+----------
+
+##### POST /convert/scss2css
+
+convert SCSS to CSS
+
+parameters
+
+- text : SCSS text
+
+
+Less
+----------
+
+##### POST /convert/less2css
+
+convert Less to CSS
+
+parameters
+
+- text : Less text
+
+
+JavaScript
+----------
+
+##### POST /convert/js2coffee
+
+convert JavaScript to CoffeeScript
+
+##### POST /format/js
+
+pretty print JavaScript
+
+##### POST /minify/js
+
+minify JavaScript
+
+
+CoffeeScript
+----------
+
+##### POST /convert/coffee2js
+
+convert CoffeeScript to JavaScript
+
+
+TypeScript
+----------
+
+##### POST /convert/type2js
+
+convert TypeScript to JavaScript
 
 
 Deployment
