@@ -15,6 +15,7 @@ var css = require('./routes/css/index');
 var sass = require('./routes/sass/index');
 var scss = require('./routes/scss/index');
 var less = require('./routes/less/index');
+var xml = require('./routes/xml/index');
 
 var app = express();
 
@@ -31,7 +32,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/', [json, yaml, cson, markdown, html, css, sass, scss, less]);
+app.use('/', [json, yaml, cson, markdown, html, css, sass, scss, less, xml]);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
