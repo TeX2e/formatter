@@ -28,7 +28,12 @@ main
 
 // GET /convert/sass2css
 router.get('/convert/sass2css', function (req, res) {
-    res.render('sass/sass2css', { title: 'Sass to CSS', textFrom: sampleText });
+    res.render('sass/sass2css', {
+        title: 'Sass to CSS',
+        textFrom: sampleText,
+        convertFrom: 'Sass',
+        convertTo: 'CSS'
+    });
 });
 
 // POST /convert/sass2css
