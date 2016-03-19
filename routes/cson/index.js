@@ -19,7 +19,12 @@ dict:
 
 // GET /convert/cson2json
 router.get('/convert/cson2json', function (req, res) {
-    res.render('cson/cson2json', { title: 'CSON to JSON', textFrom: sampleText });
+    res.render('cson/cson2json', {
+        title: 'CSON to JSON',
+        textFrom: sampleText,
+        convertFrom: 'CSON',
+        convertTo: 'JSON'
+    });
 });
 
 // POST /convert/cson2json
