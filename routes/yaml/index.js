@@ -18,7 +18,12 @@ dict:
 
 // GET /convert/yaml2json
 router.get('/convert/yaml2json', function (req, res) {
-    res.render('yaml/yaml2json', { title: 'YAML to JSON', textFrom: sampleText });
+    res.render('yaml/yaml2json', {
+        title: 'YAML to JSON',
+        textFrom: sampleText,
+        convertFrom: 'YAML',
+        convertTo: 'JSON'
+    });
 });
 
 // POST /convert/yaml2json
