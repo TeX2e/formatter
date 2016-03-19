@@ -24,7 +24,12 @@ var sampleText = `
 
 // GET /convert/json2yaml
 router.get('/convert/json2yaml', function (req, res) {
-    res.render('json/json2yaml', { title: 'JSON to YAML', textFrom: sampleText });
+    res.render('json/json2yaml', {
+        title: 'JSON to YAML',
+        textFrom: sampleText,
+        convertFrom: 'JSON',
+        convertTo: 'YAML'
+    });
 });
 
 // POST /convert/json2yaml
@@ -38,7 +43,12 @@ router.post('/convert/json2yaml', function (req, res) {
 
 // GET /convert/json2cson
 router.get('/convert/json2cson', function (req, res) {
-    res.render('json/json2cson', { title: 'JSON to CSON', textFrom: sampleText });
+    res.render('json/json2cson', {
+        title: 'JSON to CSON',
+        textFrom: sampleText,
+        convertFrom: 'JSON',
+        convertTo: 'CSON'
+    });
 });
 
 // POST /convert/json2cson
@@ -53,7 +63,12 @@ router.post('/convert/json2cson', function (req, res) {
 // GET /format/json
 router.get('/format/json', function (req, res) {
     var unreadableText = sampleText.replace(/\s+/g, '') + "\n";
-    res.render('json/json2json', { title: 'JSON formatter', textFrom: unreadableText });
+    res.render('json/json2json', {
+        title: 'JSON formatter',
+        textFrom: unreadableText,
+        convertFrom: 'JSON',
+        convertTo: 'Pretty Print JSON'
+    });
 });
 
 // POST /format/json
