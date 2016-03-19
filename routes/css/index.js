@@ -24,7 +24,12 @@ a:active {
 // GET /format/css
 router.get('/format/css', function (req, res) {
     var unreadableText = sampleText.replace(/\n\s*/g, '') + "\n";
-    res.render('css/css2css', { title: 'Pretty Print CSS', textFrom: unreadableText });
+    res.render('css/css2css', {
+        title: 'Pretty Print CSS',
+        textFrom: unreadableText,
+        convertFrom: 'CSS',
+        convertTo: 'Pretty Print CSS'
+    });
 });
 
 // POST /format/css
@@ -37,7 +42,12 @@ router.post('/format/css', function (req, res) {
 
 // GET /minify/css
 router.get('/minify/css', function (req, res) {
-    res.render('css/css2cssmin', { title: 'Minify CSS', textFrom: sampleText });
+    res.render('css/css2cssmin', {
+        title: 'Minify CSS',
+        textFrom: sampleText,
+        convertFrom: 'CSS',
+        convertTo: 'Minified CSS'
+    });
 });
 
 // POST /minify/css
