@@ -23,6 +23,7 @@
     "html2markdown": "^1.1.0",
     "jsonlint": "^1.6.2",
     "marked": "^0.3.5",
+    "node-sass": "^3.4.2",
     "pretty": "^1.0.0",
     "yamljs": "^0.2.6"
   }
