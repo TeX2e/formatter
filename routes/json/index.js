@@ -62,7 +62,7 @@ router = routerHelper.addConverterAPI(router, {
 // POST /minify/json
 router = routerHelper.addConverterAPI(router, {
     url: '/minify/json',
-    title: 'Minify JSON'
+    title: 'Minify JSON',
     from: 'JSON',
     to: 'Minified JSON',
     renderer: 'json/json2jsonmin',
