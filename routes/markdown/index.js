@@ -39,23 +39,15 @@ router = routerHelper.addConverterAPI(router, {
 });
 
 // GET /view/markdown
-// markdown previewer
-router.get('/view/markdown', function (req, res) {
-    res.render('markdown/viewer', {
-        title: 'Markdown Viewer',
-        textFrom: sampleText,
-        viewFrom: 'Markdown',
-        viewTo: 'Preview'
-    });
-});
-
 // POST /view/markdown
-// same to be: POST /convert/markdown2html
-router.post('/view/markdown', function (req, res) {
-    var markdownText = req.body.text;
-    var htmlText = markdown2html(markdownText);
-    res.write(htmlText);
-    res.end();
+router = routerHelper.addConverterAPI(router, {
+    url: '/view/markdown',
+    title: 'Markdown Previewer',
+    from: 'Markdown',
+    to: 'Preview',
+    renderer: 'markdown/viewer',
+    converter: markdown2html,
+    sampleText: sampleText
 });
 
 module.exports = router;
