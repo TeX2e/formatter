@@ -11,16 +11,16 @@
 //        converter: afunction
 //    });
 //
-module.exports.addConverterAPI = function (_router, args) {
-    var router      = _router;               // express.Router (refer to express)
+module.exports.addConverterAPI = function (router, args) {
+    //                router;                // express.Router (refer to express)
     var url         = args.url;              // string (url)  e.g. "/convert/json2cson"
     var convertFrom = args.from;             // string (language name)  e.g. "JSON"
     var convertTo   = args.to;               // string (language name)  e.g. "CSON"
     var renderer    = args.renderer;         // string (renderer path in views)  e.g. "json/json2cson"
     var converter   = args.converter;        // function (converts A to B and returns B)
-    var title       = args.title || `Convert ${convertFrom} to ${convertTo}`;
-                                             // string (title)
+    var title       = args.title || `Convert ${convertFrom} to ${convertTo}`; // string (title)
     var sampleText  = args.sampleText || ''; // string (set a sample text by default)
+    var npmDeps     = args.deps || [];       // hash (npm package dependencies) e.g. { pkgname: 'version', ... }
 
     // GET /convert/aaa2bbb
     router.get(url, function (req, res) {
@@ -28,7 +28,8 @@ module.exports.addConverterAPI = function (_router, args) {
             title: title,
             convertFrom: convertFrom,
             convertTo: convertTo,
-            textFrom: sampleText
+            textFrom: sampleText,
+            npmDeps: npmDeps
         });
     });
 
