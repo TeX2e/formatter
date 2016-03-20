@@ -1,0 +1,6 @@
+
+if npmDeps !== {}
+  h3 npm Packages Dependencies
+  ul
+    each version, package in npmDeps
+      li: a(href="//www.npmjs.com/package/#{package}" target="_blank") #{package} #{version}

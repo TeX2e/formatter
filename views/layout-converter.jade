@@ -25,3 +25,6 @@ block append content
   form(id="convertTo")
     label= convertTo
     textarea(id="editorTo" class="CodeMirror" name="text" cols="60" rows="20")= textTo
+
+block append deps
+  include ./layout-npm-deps
