@@ -1,0 +1,11 @@
+extends ../layout-converter
+
+block append scripts
+  script(src="/CodeMirror/mode/javascript/javascript.js")
+  script.
+    window.editorFromOption = { mode: 'js' };
+    window.editorToOption   = { mode: 'js' };
+  script(src="/javascripts/converter/process.js")
+
+block append content
+  

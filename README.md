@@ -199,9 +199,17 @@ parameters
 
 pretty print JavaScript
 
+parameters
+
+- text : JavaScript text
+
 ##### POST /minify/js
 
 minify JavaScript
+
+parameters
+
+- text : JavaScript text
 
 
 CoffeeScript
