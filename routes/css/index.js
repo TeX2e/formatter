@@ -24,6 +24,9 @@ a:active {
 
 // GET /format/css
 // POST /format/css
+var unreadableText = sampleText.replace(/\n\s*/g, '') // remove white spaces
+    .replace(/\s\{/g, '{')
+    .replace(/:\s/g, ':') + "\n";
 router = routerHelper.addConverterAPI(router, {
     url: '/format/css',
     title: 'Pretty Print CSS',
@@ -31,7 +34,7 @@ router = routerHelper.addConverterAPI(router, {
     to: 'Pretty Print CSS',
     renderer: 'css/css2css',
     converter: css2css,
-    sampleText: sampleText,
+    sampleText: unreadableText,
     deps: {
         "pretty-data2": "^0.40.1"
     }
@@ -44,8 +47,8 @@ router = routerHelper.addConverterAPI(router, {
     title: 'Minify CSS',
     from: 'CSS',
     to: 'Minified CSS',
-    renderer: 'css/css2css',
-    converter: css2css,
+    renderer: 'css/css2cssmin',
+    converter: css2cssmin,
     sampleText: sampleText,
     deps: {
         "pretty-data2": "^0.40.1"
