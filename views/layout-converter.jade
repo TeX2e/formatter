@@ -20,7 +20,7 @@ block append content
     label= convertFrom
     textarea(id="editorFrom" class="CodeMirror" name="text" cols="60" rows="20")= textFrom
     - var convertButton = `Convert ${convertFrom} to ${convertTo}`
-    button(type="button" class="btn")= convertButton
+    button#convert(type="button" class="btn")= convertButton
     
   form(id="convertTo")
     label= convertTo

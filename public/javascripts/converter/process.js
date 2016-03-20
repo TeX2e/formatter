@@ -28,7 +28,7 @@ $(document).ready(function () {
     var editorFrom = createCodeMirror('editorFrom', window.editorFromOption);
     var editorTo   = createCodeMirror('editorTo',   window.editorToOption);
 
-    $('#convertFrom button').click(function () {
+    $('button#convert').click(function () {
         var currentPath = window.location.pathname;
         var text = editorFrom.getValue();
 
