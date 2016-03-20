@@ -31,6 +31,7 @@
     "pretty": "^1.0.0",
     "pretty-data2": "^0.40.1",
     "pretty-js": "^0.1.8",
+    "typescript": "^1.8.9",
     "uglify-js": "^2.6.2",
     "yamljs": "^0.2.6"
   }

@@ -18,6 +18,7 @@ var less = require('./routes/less/index');
 var xml = require('./routes/xml/index');
 var coffee = require('./routes/coffee/index');
 var js = require('./routes/js/index');
+var typescript = require('./routes/typescript/index');
 
 var app = express();
 
@@ -37,7 +38,7 @@ app.use('/', routes);
 app.use('/', [
     json, yaml, cson, xml,
     markdown, html, css, sass, scss, less,
-    coffee, js
+    coffee, js, typescript
 ]);
 
 // catch 404 and forward to error handler

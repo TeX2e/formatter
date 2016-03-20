@@ -2,7 +2,6 @@
 formatter
 ==========
 
-__This Project is Still Under Construction!__
 
 
 API
@@ -238,6 +237,10 @@ TypeScript
 ##### POST /convert/type2js
 
 convert TypeScript to JavaScript
+
+parameters
+
+- text : TypeScript text
 
 
 Deployment
