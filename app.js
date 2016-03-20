@@ -17,6 +17,7 @@ var scss = require('./routes/scss/index');
 var less = require('./routes/less/index');
 var xml = require('./routes/xml/index');
 var coffee = require('./routes/coffee/index');
+var js = require('./routes/js/index');
 
 var app = express();
 
@@ -36,7 +37,7 @@ app.use('/', routes);
 app.use('/', [
     json, yaml, cson, xml,
     markdown, html, css, sass, scss, less,
-    coffee
+    coffee, js
 ]);
 
 // catch 404 and forward to error handler

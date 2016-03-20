@@ -191,6 +191,10 @@ JavaScript
 
 convert JavaScript to CoffeeScript
 
+parameters
+
+- text : JavaScript text
+
 ##### POST /format/js
 
 pretty print JavaScript

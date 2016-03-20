@@ -1,0 +1,12 @@
+extends ../layout-converter
+
+block append scripts
+  script(src="/CodeMirror/mode/javascript/javascript.js")
+  script(src="/CodeMirror/mode/coffeescript/coffeescript.js")
+  script.
+    window.editorFromOption = { mode: 'js' };
+    window.editorToOption   = { mode: 'coffeescript' };
+  script(src="/javascripts/converter/process.js")
+
+block append content
+  
