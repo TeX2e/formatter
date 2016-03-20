@@ -207,6 +207,18 @@ CoffeeScript
 
 convert CoffeeScript to JavaScript
 
+parameters
+
+- text : CoffeeScript text
+
+##### POST /convert/coffee2es6
+
+convert CoffeeScript to ES6 JavaScript
+
+parameters
+
+- text : CoffeeScript text
+
 
 TypeScript
 ----------

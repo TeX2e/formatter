@@ -21,6 +21,7 @@
   "devDependencies": {
     "coffee-script": "^1.10.0",
     "cson": "^3.0.2",
+    "decaffeinate": "^1.44.13",
     "html2markdown": "^1.1.0",
     "jsonlint": "^1.6.2",
     "less": "^2.6.1",
