@@ -35,6 +35,7 @@ module.exports.addConverterAPI = function (router, args) {
 
     // POST /convert/aaa2bbb
     router.post(url, function (req, res) {
+        res.set('Content-Type', 'text/plain; charset=utf-8');
         res.end(converter(req.body.text));
     });
 
