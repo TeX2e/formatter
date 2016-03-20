@@ -2,7 +2,7 @@
 formatter
 ==========
 
-
+convert, format and minify
 
 API
 ==========
@@ -242,6 +242,7 @@ parameters
 
 - text : TypeScript text
 
+----------
 
 Deployment
 ----------
