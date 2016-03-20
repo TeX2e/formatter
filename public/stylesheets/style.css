@@ -47,6 +47,10 @@ main {
   vertical-align: top;
 }
 
+.converter-desc {
+  padding: 2em 0;
+}
+
 /* viewer */
 
 #viewTo #textTo {

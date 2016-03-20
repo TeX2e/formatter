@@ -4,8 +4,9 @@ block append scripts
   script(src="/CodeMirror/mode/coffeescript/coffeescript.js")
   script.
     window.editorFromOption = { mode: 'coffeescript' };
-    window.editorToOption   = {};
+    window.editorToOption   = {}; // mode: 'json'
   script(src="/javascripts/converter/process.js")
 
-block append content
-  
+block append desc
+  h3 About CSON
+  p CSON is a CoffeeScript-style JSON.
