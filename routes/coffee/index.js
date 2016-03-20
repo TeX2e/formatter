@@ -39,7 +39,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'JavaScript',
     renderer: 'coffee/coffee2js',
     converter: coffee2js,
-    sampleText: sampleText
+    sampleText: sampleText,
+    deps: {
+        "coffee-script": "^1.10.0"
+    }
 });
 
 // GET /convert/coffee2es6
@@ -50,7 +53,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'ES6 JavaScript',
     renderer: 'coffee/coffee2es6',
     converter: coffee2es6,
-    sampleText: sampleText
+    sampleText: sampleText,
+    deps: {
+        "decaffeinate": "^1.44.13"
+    }
 });
 
 module.exports = router;

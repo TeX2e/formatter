@@ -26,7 +26,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'JavaScript',
     renderer: 'typescript/type2js',
     converter: type2js,
-    sampleText: sampleText
+    sampleText: sampleText,
+    deps: {
+        "typescript": "^1.8.9"
+    }
 });
 
 module.exports = router;

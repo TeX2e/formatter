@@ -36,7 +36,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'Pretty Print XML',
     renderer: 'xml/xml2xml',
     converter: xml2xml,
-    sampleText: unreadableText
+    sampleText: unreadableText,
+    deps: {
+        "pretty-data2": "^0.40.1"
+    }
 });
 
 // GET /minify/xml
@@ -48,7 +51,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'Minified XML',
     renderer: 'xml/xml2xmlmin',
     converter: xml2xmlmin,
-    sampleText: sampleText
+    sampleText: sampleText,
+    deps: {
+        "pretty-data2": "^0.40.1"
+    }
 });
 
 module.exports = router;

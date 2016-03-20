@@ -28,7 +28,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'CoffeeScript',
     renderer: 'js/js2coffee',
     converter: js2coffee,
-    sampleText: sampleText
+    sampleText: sampleText,
+    deps: {
+        "js2coffee": "^2.1.0"
+    }
 });
 
 // GET /format/js
@@ -47,7 +50,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'Pretty Print JavaScript',
     renderer: 'js/js2js',
     converter: js2js,
-    sampleText: unreadableText
+    sampleText: unreadableText,
+    deps: {
+        "pretty-js": "^0.1.8"
+    }
 });
 
 // GET /minify/js
@@ -59,7 +65,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'Minified JavaScript',
     renderer: 'js/js2jsmin',
     converter: js2jsmin,
-    sampleText: sampleText
+    sampleText: sampleText,
+    deps: {
+        "uglify-js": "^2.6.2"
+    }
 });
 
 module.exports = router;

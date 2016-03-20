@@ -32,7 +32,11 @@ router = routerHelper.addConverterAPI(router, {
     to: 'YAML',
     renderer: 'json/json2yaml',
     converter: json2yaml,
-    sampleText: sampleText
+    sampleText: sampleText,
+    deps: {
+        "jsonlint": "^1.6.2",
+        "yamljs": "^0.2.6"
+    }
 });
 
 // GET /convert/json2cson
@@ -43,7 +47,11 @@ router = routerHelper.addConverterAPI(router, {
     to: 'CSON',
     renderer: 'json/json2cson',
     converter: json2cson,
-    sampleText: sampleText
+    sampleText: sampleText,
+    deps: {
+        "jsonlint": "^1.6.2",
+        "cson": "^3.0.2"
+    }
 });
 
 // GET /format/json
@@ -55,7 +63,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'Pretty Print JSON',
     renderer: 'json/json2json',
     converter: json2json,
-    sampleText: unreadableText
+    sampleText: unreadableText,
+    deps: {
+        "jsonlint": "^1.6.2"
+    }
 });
 
 // GET /minify/json
@@ -67,7 +78,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'Minified JSON',
     renderer: 'json/json2jsonmin',
     converter: json2jsonmin,
-    sampleText: sampleText
+    sampleText: sampleText,
+    deps: {
+        "pretty-data2": "^0.40.1"
+    }
 });
 
 module.exports = router;

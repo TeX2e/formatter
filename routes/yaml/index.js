@@ -25,7 +25,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'JSON',
     renderer: 'yaml/yaml2json',
     converter: yaml2json,
-    sampleText: sampleText
+    sampleText: sampleText,
+    deps: {
+        "yamljs": "^0.2.6"
+    }
 });
 
 module.exports = router;

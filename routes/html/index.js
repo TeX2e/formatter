@@ -38,7 +38,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'Markdown',
     renderer: 'html/html2markdown',
     converter: html2markdown,
-    sampleText: sampleText
+    sampleText: sampleText,
+    deps: {
+        "html2markdown": "^1.1.0"
+    }
 });
 
 // GET /format/html
@@ -51,7 +54,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'Pretty Print HTML',
     renderer: 'html/html2html',
     converter: html2html,
-    sampleText: unreadableText
+    sampleText: unreadableText,
+    deps: {
+        "html2markdown": "^1.1.0"
+    }
 });
 
 module.exports = router;

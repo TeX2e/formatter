@@ -37,7 +37,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'CSS',
     renderer: 'less/less2css',
     converter: less2css,
-    sampleText: sampleText
+    sampleText: sampleText,
+    deps: {
+        "less": "^2.6.1"
+    }
 });
 
 module.exports = router;

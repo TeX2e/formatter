@@ -26,7 +26,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'JSON',
     renderer: 'cson/cson2json',
     converter: cson2json,
-    sampleText: sampleText
+    sampleText: sampleText,
+    deps: {
+        "cson": "^3.0.2"
+    }
 });
 
 module.exports = router;

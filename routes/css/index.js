@@ -31,7 +31,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'Pretty Print CSS',
     renderer: 'css/css2css',
     converter: css2css,
-    sampleText: sampleText
+    sampleText: sampleText,
+    deps: {
+        "pretty-data2": "^0.40.1"
+    }
 });
 
 // GET /minify/css
@@ -43,7 +46,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'Minified CSS',
     renderer: 'css/css2css',
     converter: css2css,
-    sampleText: sampleText
+    sampleText: sampleText,
+    deps: {
+        "pretty-data2": "^0.40.1"
+    }
 });
 
 module.exports = router;

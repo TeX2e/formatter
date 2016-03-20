@@ -35,7 +35,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'CSS',
     renderer: 'sass/sass2css',
     converter: sass2css,
-    sampleText: sampleText
+    sampleText: sampleText,
+    deps: {
+        "node-sass": "^3.4.2"
+    }
 });
 
 module.exports = router;

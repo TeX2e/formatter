@@ -35,7 +35,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'HTML',
     renderer: 'markdown/markdown2html',
     converter: markdown2html,
-    sampleText: sampleText
+    sampleText: sampleText,
+    deps: {
+        "marked": "^0.3.5"
+    }
 });
 
 // GET /view/markdown
@@ -47,7 +50,10 @@ router = routerHelper.addConverterAPI(router, {
     to: 'Preview',
     renderer: 'markdown/viewer',
     converter: markdown2html,
-    sampleText: sampleText
+    sampleText: sampleText,
+    deps: {
+        "marked": "^0.3.5"
+    }
 });
 
 module.exports = router;
