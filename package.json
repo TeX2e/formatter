@@ -19,6 +19,7 @@
   "author": "TeX2e",
   "license": "MIT",
   "devDependencies": {
+    "coffee-script": "^1.10.0",
     "cson": "^3.0.2",
     "html2markdown": "^1.1.0",
     "jsonlint": "^1.6.2",
