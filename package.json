@@ -7,6 +7,9 @@
     "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines" : {
+    "node": ">=5.0.0"
+  },
   "dependencies": {
     "body-parser": "~1.13.2",
     "cookie-parser": "~1.3.5",
@@ -14,9 +17,8 @@
     "express": "~4.13.1",
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
-  },
-  "devDependencies": {
+    "serve-favicon": "~2.3.0",
+
     "coffee-script": "^1.10.0",
     "cson": "^3.0.2",
     "decaffeinate": "^1.44.13",
@@ -32,6 +34,9 @@
     "typescript": "^1.8.9",
     "uglify-js": "^2.6.2",
     "yamljs": "^0.2.6"
+  },
+  "devDependencies": {
+
   },
   "author": "TeX2e",
   "license": "MIT"
