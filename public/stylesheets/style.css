@@ -2,9 +2,11 @@
 /*--------------------------------------------------*/
 /* user definition */
 
+html {
+  height: 100%;
+}
+
 body {
-  margin-top: 10px;
-  margin-left: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -13,9 +15,13 @@ a {
 }
 
 main {
-  max-width: 1000px;
+  height: 100%;
+  padding: 0 30px;
   background-color: white;
+  border-left: solid 1px #ccc;
 }
+
+/* converter */
 
 .btn {
   background: #3498db;
@@ -41,6 +47,8 @@ main {
   vertical-align: top;
 }
 
+/* viewer */
+
 #viewTo #textTo {
   word-wrap: break-word;
   overflow: auto;
@@ -50,6 +58,16 @@ main {
 .CodeMirror {
   height: 500px;
   border: solid 1px #ccc;
+}
+
+/* side menu */
+
+.slideout-menu-toggle-button {
+  font-size: 24pt;
+}
+
+nav {
+  padding: 20px;
 }
 
 /*--------------------------------------------------*/
@@ -64,7 +82,8 @@ main {
 /* for Slideout.js */
 
 body {
-  width: 90%;
+  margin: 0;
+  width: 100%;
   height: 100%;
 }
 
@@ -94,16 +113,6 @@ body {
 
 .slideout-open .slideout-menu {
   display: block;
-}
-
-/* user def */
-
-.slideout-menu-toggle-button {
-  font-size: 24pt;
-}
-
-nav {
-  margin: 50px;
 }
 
 /*--------------------------------------------------*/
