@@ -2,38 +2,8 @@
 var assert = require('assert');
 var request = require('supertest');
 var app = require('../app');
-
-// strip indentation
-function dedent(string) {
-    var lines = string
-        .trimLeft()   // dedent eats leading whitespace too
-        .split("\n");
-
-    // detect mindent (minimum indent)
-    var mindent = null;
-    lines.forEach(line => {
-        var m = line.match(/^ +/);
-        if (m) {
-            var indent = m[0].length;
-            if (!mindent) {
-                // this is the first indented line
-                mindent = indent;
-            } else {
-                mindent = Math.min(mindent, indent);
-            }
-        }
-    });
-
-    // strip indentation
-    if (mindent !== null) {
-        return lines
-            .map(line => line[0] === " " ? line.slice(mindent) : line)
-            .join("\n");
-    } else {
-        return lines.join("\n");
-    }
-}
-
+var helper = require('./helper');
+var dedent = helper.dedent;
 
 describe('/', () => {
     it('should show welcome page', (done) => {
@@ -76,11 +46,83 @@ describe('/', () => {
             .end(done)
     });
 
-    it('should convert cson to json', (done) => {
+    it.skip('should convert cson to json', (done) => {
         //
     });
 
-    it('should pretty print css', () => {
+    it.skip('should pretty print css', (done) => {
+        //
+    });
+
+    it.skip('should minify css', (done) => {
+        //
+    });
+
+    it.skip('should pretty print html', (done) => {
+        //
+    });
+
+    it.skip('should convert html to markdown', (done) => {
+        //
+    });
+
+    it.skip('should convert js to coffee', (done) => {
+        //
+    });
+
+    it.skip('should pretty print js', (done) => {
+        //
+    });
+
+    it.skip('should minify js', (done) => {
+        //
+    });
+
+    it.skip('should convert json to cson', (done) => {
+        //
+    });
+
+    it.skip('should convert json to yaml', (done) => {
+        //
+    });
+
+    it.skip('should pretty print json', (done) => {
+        //
+    });
+
+    it.skip('should minify json', (done) => {
+        //
+    });
+
+    it.skip('should convert less to css', (done) => {
+        //
+    });
+
+    it.skip('should convert markdown to html', (done) => {
+        //
+    });
+
+    it.skip('should convert sass to css', (done) => {
+        //
+    });
+
+    it.skip('should convert scss to css', (done) => {
+        //
+    });
+
+    it.skip('should convert typescript to js', (done) => {
+        //
+    });
+
+    it.skip('should pretty print xml', (done) => {
+        //
+    });
+
+    it.skip('should minify xml', (done) => {
+        //
+    });
+
+    it.skip('should convert yaml to json', (done) => {
         //
     });
 });
