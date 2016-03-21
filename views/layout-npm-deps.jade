@@ -5,5 +5,4 @@ if npmDeps !== {}
     each version, package in npmDeps
       li
         a(href="//www.npmjs.com/package/#{package}" target="_blank")= package
-        &nbsp;
-        = version
+        | &nbsp; #{version}
