@@ -20,15 +20,15 @@ dict:
 // GET /convert/yaml2json
 // POST /convert/yaml2json
 router = routerHelper.addConverterAPI(router, {
-    url: '/convert/yaml2json',
-    from: 'YAML',
-    to: 'JSON',
-    renderer: 'yaml/yaml2json',
-    converter: yaml2json,
-    sampleText: sampleText,
-    deps: {
-        "yamljs": "^0.2.6"
-    }
+  url: '/convert/yaml2json',
+  from: 'YAML',
+  to: 'JSON',
+  renderer: 'yaml/yaml2json',
+  converter: yaml2json,
+  sampleText: sampleText,
+  deps: {
+    "yamljs": "^0.2.6"
+  }
 });
 
 module.exports = router;

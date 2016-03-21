@@ -8,16 +8,16 @@ var css2cssmin = require('./css2cssmin.js');
 
 var sampleText = `
 .headbg {
-    margin:0 8px;
+  margin:0 8px;
 }
 
 a:link,
 a:focus {
-    color: #00c;
+  color: #00c;
 }
 
 a:active {
-    color: red;
+  color: red;
 }
 
 `;
@@ -25,34 +25,34 @@ a:active {
 // GET /format/css
 // POST /format/css
 var unreadableText = sampleText.replace(/\n\s*/g, '') // remove white spaces
-    .replace(/\s\{/g, '{')
-    .replace(/:\s/g, ':') + "\n";
+  .replace(/\s\{/g, '{')
+  .replace(/:\s/g, ':') + "\n";
 router = routerHelper.addConverterAPI(router, {
-    url: '/format/css',
-    title: 'Pretty Print CSS',
-    from: 'CSS',
-    to: 'Pretty Print CSS',
-    renderer: 'css/css2css',
-    converter: css2css,
-    sampleText: unreadableText,
-    deps: {
-        "pretty-data2": "^0.40.1"
-    }
+  url: '/format/css',
+  title: 'Pretty Print CSS',
+  from: 'CSS',
+  to: 'Pretty Print CSS',
+  renderer: 'css/css2css',
+  converter: css2css,
+  sampleText: unreadableText,
+  deps: {
+    "pretty-data2": "^0.40.1"
+  }
 });
 
 // GET /minify/css
 // POST /minify/css
 router = routerHelper.addConverterAPI(router, {
-    url: '/minify/css',
-    title: 'Minify CSS',
-    from: 'CSS',
-    to: 'Minified CSS',
-    renderer: 'css/css2cssmin',
-    converter: css2cssmin,
-    sampleText: sampleText,
-    deps: {
-        "pretty-data2": "^0.40.1"
-    }
+  url: '/minify/css',
+  title: 'Minify CSS',
+  from: 'CSS',
+  to: 'Minified CSS',
+  renderer: 'css/css2cssmin',
+  converter: css2cssmin,
+  sampleText: sampleText,
+  deps: {
+    "pretty-data2": "^0.40.1"
+  }
 });
 
 module.exports = router;

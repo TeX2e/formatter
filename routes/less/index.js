@@ -32,15 +32,15 @@ p {
 // GET /convert/less2css
 // POST /convert/less2css
 router = routerHelper.addConverterAPI(router, {
-    url: '/convert/less2css',
-    from: 'Less',
-    to: 'CSS',
-    renderer: 'less/less2css',
-    converter: less2css,
-    sampleText: sampleText,
-    deps: {
-        "less": "^2.6.1"
-    }
+  url: '/convert/less2css',
+  from: 'Less',
+  to: 'CSS',
+  renderer: 'less/less2css',
+  converter: less2css,
+  sampleText: sampleText,
+  deps: {
+    "less": "^2.6.1"
+  }
 });
 
 module.exports = router;

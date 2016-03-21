@@ -21,15 +21,15 @@ dict:
 // GET /convert/cson2json
 // POST /convert/cson2json
 router = routerHelper.addConverterAPI(router, {
-    url: '/convert/cson2json',
-    from: 'CSON',
-    to: 'JSON',
-    renderer: 'cson/cson2json',
-    converter: cson2json,
-    sampleText: sampleText,
-    deps: {
-        "cson": "^3.0.2"
-    }
+  url: '/convert/cson2json',
+  from: 'CSON',
+  to: 'JSON',
+  renderer: 'cson/cson2json',
+  converter: cson2json,
+  sampleText: sampleText,
+  deps: {
+    "cson": "^3.0.2"
+  }
 });
 
 module.exports = router;

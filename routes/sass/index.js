@@ -30,15 +30,15 @@ main
 // GET /convert/sass2css
 // POST /convert/sass2css
 router = routerHelper.addConverterAPI(router, {
-    url: '/convert/sass2css',
-    from: 'Sass',
-    to: 'CSS',
-    renderer: 'sass/sass2css',
-    converter: sass2css,
-    sampleText: sampleText,
-    deps: {
-        "node-sass": "^3.4.2"
-    }
+  url: '/convert/sass2css',
+  from: 'Sass',
+  to: 'CSS',
+  renderer: 'sass/sass2css',
+  converter: sass2css,
+  sampleText: sampleText,
+  deps: {
+    "node-sass": "^3.4.2"
+  }
 });
 
 module.exports = router;

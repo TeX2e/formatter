@@ -23,52 +23,52 @@ function listen (el, event, handler) {
 // GET /convert/js2coffee
 // POST /convert/js2coffee
 router = routerHelper.addConverterAPI(router, {
-    url: '/convert/js2coffee',
-    from: 'JavaScript',
-    to: 'CoffeeScript',
-    renderer: 'js/js2coffee',
-    converter: js2coffee,
-    sampleText: sampleText,
-    deps: {
-        "js2coffee": "^2.1.0"
-    }
+  url: '/convert/js2coffee',
+  from: 'JavaScript',
+  to: 'CoffeeScript',
+  renderer: 'js/js2coffee',
+  converter: js2coffee,
+  sampleText: sampleText,
+  deps: {
+    "js2coffee": "^2.1.0"
+  }
 });
 
 // GET /format/js
 // POST /format/js
 var unreadableText = sampleText
-    .replace(/\n\s*/g, '') // replace white spaces
-    .replace(/,\s/g, ',')
-    .replace(/\s?\{\s?/g, '{')
-    .replace(/\s?\}\s?/g, '}')
-    .replace(/\s?\(\s?/g, '(')
-    .replace(/\s?\)\s?/g, ')') + "\n";
+  .replace(/\n\s*/g, '') // replace white spaces
+  .replace(/,\s/g, ',')
+  .replace(/\s?\{\s?/g, '{')
+  .replace(/\s?\}\s?/g, '}')
+  .replace(/\s?\(\s?/g, '(')
+  .replace(/\s?\)\s?/g, ')') + "\n";
 router = routerHelper.addConverterAPI(router, {
-    url: '/format/js',
-    title: 'Pretty Print JavaScript',
-    from: 'JavaScript',
-    to: 'Pretty Print JavaScript',
-    renderer: 'js/js2js',
-    converter: js2js,
-    sampleText: unreadableText,
-    deps: {
-        "pretty-js": "^0.1.8"
-    }
+  url: '/format/js',
+  title: 'Pretty Print JavaScript',
+  from: 'JavaScript',
+  to: 'Pretty Print JavaScript',
+  renderer: 'js/js2js',
+  converter: js2js,
+  sampleText: unreadableText,
+  deps: {
+    "pretty-js": "^0.1.8"
+  }
 });
 
 // GET /minify/js
 // POST /minify/js
 router = routerHelper.addConverterAPI(router, {
-    url: '/minify/js',
-    title: 'Minify JavaScript',
-    from: 'JavaScript',
-    to: 'Minified JavaScript',
-    renderer: 'js/js2jsmin',
-    converter: js2jsmin,
-    sampleText: sampleText,
-    deps: {
-        "uglify-js": "^2.6.2"
-    }
+  url: '/minify/js',
+  title: 'Minify JavaScript',
+  from: 'JavaScript',
+  to: 'Minified JavaScript',
+  renderer: 'js/js2jsmin',
+  converter: js2jsmin,
+  sampleText: sampleText,
+  deps: {
+    "uglify-js": "^2.6.2"
+  }
 });
 
 module.exports = router;

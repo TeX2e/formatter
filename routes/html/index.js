@@ -33,31 +33,31 @@ var sampleText = `
 // GET /convert/html2markdown
 // POST /convert/html2markdown
 router = routerHelper.addConverterAPI(router, {
-    url: '/convert/html2markdown',
-    from: 'HTML',
-    to: 'Markdown',
-    renderer: 'html/html2markdown',
-    converter: html2markdown,
-    sampleText: sampleText,
-    deps: {
-        "html2markdown": "^1.1.0"
-    }
+  url: '/convert/html2markdown',
+  from: 'HTML',
+  to: 'Markdown',
+  renderer: 'html/html2markdown',
+  converter: html2markdown,
+  sampleText: sampleText,
+  deps: {
+    "html2markdown": "^1.1.0"
+  }
 });
 
 // GET /format/html
 // POST /format/html
 var unreadableText = sampleText.replace(/\n\s*/g, '') + "\n";
 router = routerHelper.addConverterAPI(router, {
-    url: '/format/html',
-    title: 'Pretty Print HTML',
-    from: 'HTML',
-    to: 'Pretty Print HTML',
-    renderer: 'html/html2html',
-    converter: html2html,
-    sampleText: unreadableText,
-    deps: {
-        "html2markdown": "^1.1.0"
-    }
+  url: '/format/html',
+  title: 'Pretty Print HTML',
+  from: 'HTML',
+  to: 'Pretty Print HTML',
+  renderer: 'html/html2html',
+  converter: html2html,
+  sampleText: unreadableText,
+  deps: {
+    "html2markdown": "^1.1.0"
+  }
 });
 
 module.exports = router;

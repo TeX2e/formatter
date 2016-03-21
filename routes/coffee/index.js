@@ -28,35 +28,35 @@ class Animal
   constructor: (@name) ->
 
   move: (meters) ->
-    alert @name + " moved #{meters}m."
+  alert @name + " moved #{meters}m."
 `;
 
 // GET /convert/coffee2js
 // POST /convert/coffee2js
 router = routerHelper.addConverterAPI(router, {
-    url: '/convert/coffee2js',
-    from: 'CoffeeScript',
-    to: 'JavaScript',
-    renderer: 'coffee/coffee2js',
-    converter: coffee2js,
-    sampleText: sampleText,
-    deps: {
-        "coffee-script": "^1.10.0"
-    }
+  url: '/convert/coffee2js',
+  from: 'CoffeeScript',
+  to: 'JavaScript',
+  renderer: 'coffee/coffee2js',
+  converter: coffee2js,
+  sampleText: sampleText,
+  deps: {
+    "coffee-script": "^1.10.0"
+  }
 });
 
 // GET /convert/coffee2es6
 // POST /convert/coffee2es6
 router = routerHelper.addConverterAPI(router, {
-    url: '/convert/coffee2es6',
-    from: 'CoffeeScript',
-    to: 'ES6 JavaScript',
-    renderer: 'coffee/coffee2es6',
-    converter: coffee2es6,
-    sampleText: sampleText,
-    deps: {
-        "decaffeinate": "^1.44.13"
-    }
+  url: '/convert/coffee2es6',
+  from: 'CoffeeScript',
+  to: 'ES6 JavaScript',
+  renderer: 'coffee/coffee2es6',
+  converter: coffee2es6,
+  sampleText: sampleText,
+  deps: {
+    "decaffeinate": "^1.44.13"
+  }
 });
 
 module.exports = router;
