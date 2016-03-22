@@ -55,99 +55,147 @@ describe('api', () => {
   describe('POST /convert/cson2json', () => {
     it('should convert cson to json', (done) => {
       request(app)
-      .post('/convert/cson2json')
-      .send({ text: dedent(`
-        dict:
-          prop: "foo"
-          prop2: 123
-        `) })
-      .expect(200)
-      .expect('Content-Type', 'text/plain; charset=utf-8')
-      .expect(dedent(`
-        {
-          "dict": {
-          "prop": "foo",
-          "prop2": 123
+        .post('/convert/cson2json')
+        .send({ text: dedent(`
+          dict:
+            prop: "foo"
+            prop2: 123
+          `) })
+        .expect(200)
+        .expect('Content-Type', 'text/plain; charset=utf-8')
+        .expect(dedent(`
+          {
+            "dict": {
+              "prop": "foo",
+              "prop2": 123
+            }
           }
-        }
-        `))
-      .end(done);
+          `))
+        .end(done);
     });
   });
 
-  it.skip('should pretty print css', (done) => {
-    //
+  describe('POST /format/css', () => {
+    it('should pretty print css', (done) => {
+      request(app)
+        .post('/format/css')
+        .send({ text: `.headbg{margin:0 8px;}` })
+        .expect(200)
+        .expect('Content-Type', 'text/plain; charset=utf-8')
+        .expect(dedent(`
+          .headbg{
+            margin:0 8px;
+          }
+          `))
+        .end(done);
+    });
   });
 
-  it.skip('should minify css', (done) => {
-    //
+  describe('POST /minify/css', () => {
+    it.skip('should minify css', (done) => {
+      //
+    });
   });
 
-  it.skip('should pretty print html', (done) => {
-    //
+  describe('POST /format/html', () => {
+    it.skip('should pretty print html', (done) => {
+      //
+    });
   });
 
-  it.skip('should convert html to markdown', (done) => {
-    //
+  describe('POST /convert/html2markdown', () => {
+    it.skip('should convert html to markdown', (done) => {
+      //
+    });
   });
 
-  it.skip('should convert js to coffee', (done) => {
-    //
+  describe('POST /convert/js2coffee', () => {
+    it.skip('should convert js to coffee', (done) => {
+      //
+    });
   });
 
-  it.skip('should pretty print js', (done) => {
-    //
+  describe('POST /format/js', () => {
+    it.skip('should pretty print js', (done) => {
+      //
+    });
   });
 
-  it.skip('should minify js', (done) => {
-    //
+  describe('POST /minify/js', () => {
+    it.skip('should minify js', (done) => {
+      //
+    });
   });
 
-  it.skip('should convert json to cson', (done) => {
-    //
+  describe('POST /convert/json2cson', () => {
+    it.skip('should convert json to cson', (done) => {
+      //
+    });
   });
 
-  it.skip('should convert json to yaml', (done) => {
-    //
+  describe('POST /convert/json2yaml', () => {
+    it.skip('should convert json to yaml', (done) => {
+      //
+    });
   });
 
-  it.skip('should pretty print json', (done) => {
-    //
+  describe('POST /format/json', () => {
+    it.skip('should pretty print json', (done) => {
+      //
+    });
   });
 
-  it.skip('should minify json', (done) => {
-    //
+  describe('POST /minify/json', () => {
+    it.skip('should minify json', (done) => {
+      //
+    });
   });
 
-  it.skip('should convert less to css', (done) => {
-    //
+  describe('POST /convert/less2css', () => {
+    it.skip('should convert less to css', (done) => {
+      //
+    });
   });
 
-  it.skip('should convert markdown to html', (done) => {
-    //
+  describe('POST /convert/markdown2html', () => {
+    it.skip('should convert markdown to html', (done) => {
+      //
+    });
   });
 
-  it.skip('should convert sass to css', (done) => {
-    //
+  describe('POST /convert/sass2css', () => {
+    it.skip('should convert sass to css', (done) => {
+      //
+    });
   });
 
-  it.skip('should convert scss to css', (done) => {
-    //
+  describe('POST /convert/scss2css', () => {
+    it.skip('should convert scss to css', (done) => {
+      //
+    });
   });
 
-  it.skip('should convert typescript to js', (done) => {
-    //
+  describe('POST /convert/type2js', () => {
+    it.skip('should convert typescript to js', (done) => {
+      //
+    });
   });
 
-  it.skip('should pretty print xml', (done) => {
-    //
+  describe('POST /format/xml', () => {
+    it.skip('should pretty print xml', (done) => {
+      //
+    });
   });
 
-  it.skip('should minify xml', (done) => {
-    //
+  describe('POST /minify/xml', () => {
+    it.skip('should minify xml', (done) => {
+      //
+    });
   });
 
-  it.skip('should convert yaml to json', (done) => {
-    //
+  describe('POST /convert/yaml2json', () => {
+    it.skip('should convert yaml to json', (done) => {
+      //
+    });
   });
 });
